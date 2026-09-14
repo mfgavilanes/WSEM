@@ -1,0 +1,15 @@
+digraph ZNl6 {
+    rankdir=LR;
+    graph [bgcolor="transparent"];
+    node [fontname="Arial"];
+
+    Ana [label="ex:Ana", shape=ellipse];
+    Luis [label="ex:Luis", shape=ellipse];
+    advisorOf [label="ex:advisorOf", shape=box, style=rounded];
+    mentors [label="ex:mentors", shape=box, style=rounded];
+    Researcher [label="ex:Researcher", shape=ellipse];
+
+    Ana -> Luis [label="ex:advisorOf"];
+    advisorOf -> mentors [label="rdfs:subPropertyOf"];
+    mentors -> Researcher [label="rdfs:range"];
+}
