@@ -1,0 +1,11 @@
+digraph h6Wk {
+    rankdir=LR;
+    graph [bgcolor="transparent", pad=0.2];
+    node [shape=ellipse, style="filled", fillcolor="transparent"];
+    edge [fontsize=11];
+    Ana [label="ex:Ana"];
+    Luis [label="ex:Luis"];
+    SW [label="ex:SemanticWeb"];
+    Ana -> SW [label="ex:studies"];
+    Luis -> SW [label="ex:studies"];
+}
