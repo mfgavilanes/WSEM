@@ -1,0 +1,10 @@
+digraph B7qM {
+  graph [rankdir=LR, bgcolor="transparent", margin=0.05];
+  node [shape=ellipse, fontname="Arial", fontsize=12];
+  edge [fontname="Arial", fontsize=11];
+  Ana [label="ex:Ana"];
+  Luis [label="ex:Luis"];
+  Marta [label="ex:Marta"];
+  Ana -> Luis [label="ex:knows"];
+  Luis -> Marta [label="ex:knows"];
+}

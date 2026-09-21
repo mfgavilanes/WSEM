@@ -1,0 +1,14 @@
+digraph v5QH {
+  graph [rankdir=LR, bgcolor="transparent", margin=0.05, nodesep=0.35, ranksep=0.6];
+  node [fontname="Arial", fontsize=11];
+  edge [fontname="Arial", fontsize=10];
+  Ana [shape=ellipse,label="ex:Ana"];
+  Diego [shape=ellipse,label="ex:Diego"];
+  Marta [shape=ellipse,label="ex:Marta"];
+  WS [shape=ellipse,label="ex:WebSemantica"];
+  Ana -> Diego [label="ex:knows"];
+  Diego -> Marta [label="ex:knows"];
+  Ana -> WS [label="ex:enrolledIn"];
+  Diego -> WS [label="ex:enrolledIn"];
+  Marta -> WS [label="ex:enrolledIn"];
+}

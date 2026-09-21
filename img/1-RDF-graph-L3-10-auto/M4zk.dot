@@ -1,0 +1,17 @@
+digraph M4zk {
+  graph [rankdir=LR, bgcolor="transparent", margin=0.05, nodesep=0.35, ranksep=0.6];
+  node [fontname="Arial", fontsize=11];
+  edge [fontname="Arial", fontsize=10];
+  Ana [shape=ellipse,label="ex:Ana"];
+  Diego [shape=ellipse,label="ex:Diego"];
+  WS [shape=ellipse,label="ex:WebSemantica"];
+  AI [shape=ellipse,label="ex:degreeAI"];
+  L1 [shape=box,style="rounded,dashed",label="\"Ana\""];
+  L2 [shape=box,style="rounded,dashed",label="\"Diego\""];
+  Ana -> WS [label="ex:enrolledIn"];
+  Diego -> WS [label="ex:enrolledIn"];
+  Ana -> AI [label="ex:studiesDegree"];
+  Diego -> AI [label="ex:studiesDegree"];
+  Ana -> L1 [label="rdfs:label"];
+  Diego -> L2 [label="rdfs:label"];
+}

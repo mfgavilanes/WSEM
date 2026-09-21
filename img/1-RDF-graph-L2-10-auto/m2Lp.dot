@@ -1,0 +1,12 @@
+digraph m2Lp {
+  graph [rankdir=LR, bgcolor="transparent", margin=0.05];
+  node [fontname="Arial", fontsize=12];
+  edge [fontname="Arial", fontsize=11];
+  Ana [shape=ellipse, label="ex:Ana"];
+  Addr [shape=ellipse, label="_:b1"];
+  City [shape=box, style="rounded,dashed", label="\"Ourense\""];
+  Zip [shape=box, style="rounded,dashed", label="\"32001\""];
+  Ana -> Addr [label="ex:address"];
+  Addr -> City [label="ex:city"];
+  Addr -> Zip [label="ex:zip"];
+}

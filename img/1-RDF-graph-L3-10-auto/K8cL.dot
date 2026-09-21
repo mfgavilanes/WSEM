@@ -1,0 +1,14 @@
+digraph K8cL {
+  graph [rankdir=LR, bgcolor="transparent", margin=0.05, nodesep=0.35, ranksep=0.6];
+  node [fontname="Arial", fontsize=11];
+  edge [fontname="Arial", fontsize=10];
+  Ana [shape=ellipse,label="ex:Ana"];
+  Degree [shape=ellipse,label="ex:degreeAI"];
+  School [shape=ellipse,label="ex:SchoolAI"];
+  City [shape=ellipse,label="ex:Ourense"];
+  Name [shape=box,style="rounded,dashed",label="\"Grado en IA\""];
+  Ana -> Degree [label="ex:studiesDegree"];
+  Degree -> School [label="ex:offeredBy"];
+  School -> City [label="ex:locatedIn"];
+  Degree -> Name [label="rdfs:label"];
+}

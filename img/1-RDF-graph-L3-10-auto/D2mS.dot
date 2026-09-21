@@ -1,0 +1,25 @@
+digraph D2mS {
+  graph [rankdir=TB, bgcolor="transparent", margin=0.05, nodesep=0.45, ranksep=0.55];
+  node [fontname="Arial", fontsize=11];
+  edge [fontname="Arial", fontsize=10];
+
+  subgraph cluster1 {
+    label="Modelo 1";
+    color="gray70";
+    A1 [shape=ellipse,label="ex:Ana"];
+    W1 [shape=ellipse,label="ex:WebSemantica"];
+    N1 [shape=box,style="rounded,dashed",label="\"Ana\""];
+    A1 -> W1 [label="ex:enrolledIn"];
+    A1 -> N1 [label="rdfs:label"];
+  }
+
+  subgraph cluster2 {
+    label="Modelo 2";
+    color="gray70";
+    A2 [shape=ellipse,label="ex:Ana"];
+    W2 [shape=ellipse,label="ex:WebSemantica"];
+    C2 [shape=box,style="rounded,dashed",label="6"];
+    A2 -> W2 [label="ex:enrolledIn"];
+    W2 -> C2 [label="ex:credits"];
+  }
+}
