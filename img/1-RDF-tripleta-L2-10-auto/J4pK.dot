@@ -1,0 +1,6 @@
+digraph G {
+ graph [rankdir=LR,bgcolor="transparent",pad="0.2",nodesep="0.5",ranksep="0.8"];
+ node [shape=box,style="rounded",fontname="Arial"]; edge [fontname="Arial"];
+ Ana[label="student:s01"]; Age[label="20",shape=ellipse];
+ Ana->Age[label="ex:age"];
+}

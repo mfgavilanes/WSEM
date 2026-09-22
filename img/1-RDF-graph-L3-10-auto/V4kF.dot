@@ -1,0 +1,6 @@
+digraph G {
+ graph [rankdir=LR,bgcolor="transparent",pad="0.2",nodesep="0.5",ranksep="0.8"];
+ node [shape=box,style="rounded",fontname="Arial"]; edge [fontname="Arial"];
+ Diego[label="student:s02"]; Student[label="ex:Student"]; AI[label="degree:AI"]; Label[label="Diego",shape=ellipse];
+ Diego->Student[label="rdf:type"]; Diego->AI[label="ex:studiesDegree"]; Diego->Label[label="rdfs:label"];
+}

@@ -1,0 +1,7 @@
+digraph G {
+ graph [rankdir=LR,bgcolor="transparent",pad="0.2",nodesep="0.5",ranksep="0.8"];
+ node [shape=box,style="rounded",fontname="Arial"]; edge [fontname="Arial"];
+ Ana[label="student:s01"]; N1[label="Ana",shape=ellipse]; N2[label="ANA",shape=ellipse];
+ Ana->N1[label="rdfs:label"];
+ Ana->N2[label="rdfs:label"];
+}

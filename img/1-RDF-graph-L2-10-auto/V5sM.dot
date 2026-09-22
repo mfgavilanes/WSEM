@@ -1,0 +1,7 @@
+digraph G {
+ graph [rankdir=LR,bgcolor="transparent",pad="0.2",nodesep="0.5",ranksep="0.8"];
+ node [shape=box,style="rounded",fontname="Arial"]; edge [fontname="Arial"];
+ D1[label="_:d1",shape=ellipse]; Street[label="Rúa do Progreso",shape=ellipse]; City[label="Ourense",shape=ellipse];
+ D1->Street[label="ex:street"];
+ D1->City[label="ex:city"];
+}

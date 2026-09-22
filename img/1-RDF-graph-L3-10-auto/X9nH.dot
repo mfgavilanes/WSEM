@@ -1,0 +1,6 @@
+digraph G {
+ graph [rankdir=LR,bgcolor="transparent",pad="0.2",nodesep="0.5",ranksep="0.8"];
+ node [shape=box,style="rounded",fontname="Arial"]; edge [fontname="Arial"];
+ Ana[label="student:s01"]; Web[label="course:c01"]; WLabel[label="Web Semántica",shape=ellipse]; Credits[label="6",shape=ellipse]; Course[label="ex:Course"];
+ Ana->Web[label="ex:enrolledIn"]; Web->WLabel[label="rdfs:label"]; Web->Credits[label="ex:credits"]; Web->Course[label="rdf:type"];
+}
