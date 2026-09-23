@@ -1,0 +1,10 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.6", ranksep="0.8"];
+  node [shape=box, style="rounded", fontname="Arial"];
+  edge [fontname="Arial"];
+  c [label="course:c02"];
+  t [label="ex:Course"];
+  l [label="Web Semántica", shape=ellipse];
+  c -> t [label="rdf:type"];
+  c -> l [label="?", style=dashed];
+}

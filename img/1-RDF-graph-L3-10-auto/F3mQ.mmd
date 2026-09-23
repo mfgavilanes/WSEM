@@ -1,0 +1,6 @@
+flowchart LR
+P[prof:p01] -->|ex:teaches| C[course:c02]
+S[student:s02] -->|ex:enrolledIn| C
+C -->|rdf:type| T[ex:Course]
+C -->|rdfs:label| L(("Semantic Web"))
+

@@ -1,0 +1,9 @@
+digraph G {
+graph [rankdir=LR,bgcolor="transparent",pad="0.2",nodesep="0.55",ranksep="0.8"];
+node [shape=box,style="rounded",fontname="Arial"]; edge [fontname="Arial"];
+s [label="student:s03"]; b [label="_:b1",shape=ellipse]; city [label="Vigo",shape=ellipse]; street [label="Gran Vía",shape=ellipse]; cp [label="36204",shape=ellipse];
+s -> b [label="ex:address"];
+b -> city [label="ex:city"];
+b -> street [label="ex:street"];
+b -> cp [label="ex:postalCode"];
+}

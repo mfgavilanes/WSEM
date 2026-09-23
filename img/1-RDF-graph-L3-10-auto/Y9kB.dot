@@ -1,0 +1,9 @@
+digraph G {
+graph [rankdir=LR,bgcolor="transparent",pad="0.2",nodesep="0.55",ranksep="0.8"];
+node [shape=box,style="rounded",fontname="Arial"]; edge [fontname="Arial"];
+p [label="prof:p02"]; c [label="course:c07"]; d [label="degree:AI"]; pl [label="Prof. García",shape=ellipse]; cl [label="Knowledge Representation",shape=ellipse];
+p -> c [label="ex:teaches"];
+c -> d [label="ex:belongsToDegree"];
+p -> pl [label="rdfs:label"];
+c -> cl [label="rdfs:label"];
+}

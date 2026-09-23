@@ -1,0 +1,9 @@
+digraph G {
+graph [rankdir=LR,bgcolor="transparent",pad="0.2",nodesep="0.55",ranksep="0.8"];
+node [shape=box,style="rounded",fontname="Arial"]; edge [fontname="Arial"];
+s [label="student:s07"]; b [label="_:b9",shape=ellipse]; city [label="Ourense",shape=ellipse]; country [label="Spain",shape=ellipse]; n [label="Lucía",shape=ellipse];
+s -> b [label="ex:address"];
+b -> city [label="ex:city"];
+b -> country [label="ex:country"];
+s -> n [label="rdfs:label"];
+}

@@ -1,8 +1,0 @@
-digraph G {
- graph [rankdir=LR,bgcolor="transparent",pad="0.2",nodesep="0.5",ranksep="0.8"];
- node [shape=box,style="rounded",fontname="Arial"]; edge [fontname="Arial"];
- WS[label="course:c01"]; Course[label="ex:Course"]; Credits[label="6",shape=ellipse]; Label[label="Web Semántica",shape=ellipse];
- WS->Course[label="rdf:type"];
- WS->Credits[label="ex:credits"];
- WS->Label[label="rdfs:label"];
-}

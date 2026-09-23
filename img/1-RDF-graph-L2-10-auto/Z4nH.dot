@@ -1,8 +1,0 @@
-digraph G {
- graph [rankdir=LR,bgcolor="transparent",pad="0.2",nodesep="0.5",ranksep="0.8"];
- node [shape=box,style="rounded",fontname="Arial"]; edge [fontname="Arial"];
- Ana[label="student:s01"]; Student[label="ex:Student"]; Name[label="Ana",shape=ellipse]; Web[label="course:c01"];
- Ana->Student[label="rdf:type"];
- Ana->Name[label="rdfs:label"];
- Ana->Web[label="ex:enrolledIn"];
-}

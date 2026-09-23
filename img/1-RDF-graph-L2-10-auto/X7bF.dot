@@ -1,7 +1,0 @@
-digraph G {
- graph [rankdir=LR,bgcolor="transparent",pad="0.2",nodesep="0.5",ranksep="0.8"];
- node [shape=box,style="rounded",fontname="Arial"]; edge [fontname="Arial"];
- Ana[label="student:s01"]; Web[label="course:c01"]; Label[label="Web Semántica",shape=ellipse];
- Ana->Web[label="ex:enrolledIn"];
- Web->Label[label="rdfs:label"];
-}

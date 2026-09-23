@@ -1,0 +1,9 @@
+digraph G {
+graph [rankdir=LR,bgcolor="transparent",pad="0.2",nodesep="0.55",ranksep="0.8"];
+node [shape=box,style="rounded",fontname="Arial"]; edge [fontname="Arial"];
+p [label="prof:p01"]; c [label="course:c02"]; t [label="ex:Course"]; l [label="Semantic Web",shape=ellipse]; s [label="student:s02"];
+p -> c [label="ex:teaches"];
+s -> c [label="ex:enrolledIn"];
+c -> t [label="rdf:type"];
+c -> l [label="rdfs:label"];
+}
