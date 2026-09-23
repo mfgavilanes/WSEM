@@ -1,6 +1,6 @@
 digraph G {
  graph [rankdir=LR,bgcolor="transparent",pad="0.2",nodesep="0.5",ranksep="0.8"];
  node [shape=box,style="rounded",fontname="Arial"]; edge [fontname="Arial"];
- Ana[label="student:s01"]; Web[label="course:c01"]; Name[label="Ana",shape=ellipse];
- Ana->Web[label="ex:enrolledIn"]; Ana->Name[label="rdfs:label"];
+ S[label="student:s02"]; B[label="_:b1",shape=ellipse]; City[label="Vigo",shape=ellipse];
+ S->B[label="ex:address"]; B->City[label="ex:city"];
 }
