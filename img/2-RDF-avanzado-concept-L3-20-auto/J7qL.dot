@@ -1,0 +1,16 @@
+digraph J7qL {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.15"];
+  node [shape=box, style="rounded,filled", fillcolor="#E8F1FF", color="#3D6FB6", fontname="Arial"];
+  edge [color="#4C6078", fontname="Arial"];
+  ana [label="student:ana\nAna"];
+  diego [label="student:diego\nDiego"];
+  c01 [label="course:c01\nWeb Semántica"];
+  c02 [label="course:c02\nAprendizaje Automático I"];
+  maria [label="teacher:maria\nMaría"];
+  luis [label="teacher:luis\nLuis"];
+  ana -> c01 [label="ex:enrolledIn"];
+  ana -> c02 [label="ex:enrolledIn"];
+  diego -> c01 [label="ex:enrolledIn"];
+  maria -> c01 [label="ex:teaches"];
+  luis -> c02 [label="ex:teaches"];
+}

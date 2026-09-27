@@ -1,0 +1,9 @@
+flowchart LR
+  l1((_:l1)) -->|"rdf:first"| c01["course:c01"]
+  l1 -->|"rdf:rest"| l2((_:l2))
+  l2 -->|"rdf:first"| c02["course:c02"]
+  l2 -->|"rdf:rest"| l3((_:l3))
+  l3 -->|"rdf:first"| c03["course:c03"]
+  l3 -->|"rdf:rest"| l4((_:l4))
+  l4 -->|"rdf:first"| c04["course:c04"]
+  l4 -->|"rdf:rest"| nil["rdf:nil"]

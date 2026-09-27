@@ -1,0 +1,6 @@
+flowchart LR
+  c03[ex:c03] -->|ex:hasPrerequisite| l1((_:l1))
+  l1 -->|rdf:first| c01[ex:c01]
+  l1 -->|rdf:rest| l2((_:l2))
+  l2 -->|rdf:first| c02[ex:c02]
+  l2 -->|rdf:rest| nil[rdf:nil]

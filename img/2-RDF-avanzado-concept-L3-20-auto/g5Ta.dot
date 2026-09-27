@@ -1,0 +1,23 @@
+digraph g5Ta {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.15", newrank=true];
+  node [shape=box, style="rounded,filled", fillcolor="#E8F1FF", color="#3D6FB6", fontname="Arial"];
+  edge [color="#4C6078", fontname="Arial"];
+  subgraph cluster_seq {
+    label="rdf:Seq";
+    color="#9CB7DD";
+    seq [label="ex:semester/first"];
+    c01s [label="course:c01"];
+    c02s [label="course:c02"];
+    seq -> c01s [label="rdf:_1"];
+    seq -> c02s [label="rdf:_2"];
+  }
+  subgraph cluster_bag {
+    label="rdf:Bag";
+    color="#9CB7DD";
+    bag [label="ex:courses/all"];
+    c01b [label="course:c01"];
+    c02b [label="course:c02"];
+    bag -> c01b [label="rdf:_1"];
+    bag -> c02b [label="rdf:_2"];
+  }
+}

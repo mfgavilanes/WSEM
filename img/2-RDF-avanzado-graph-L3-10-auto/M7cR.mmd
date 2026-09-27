@@ -1,0 +1,6 @@
+flowchart LR
+  ana[ex:Ana] -->|ex:enrolledIn| c01[ex:c01]
+  c01 -->|ex:hasEvaluation| e1((_:e1))
+  e1 -->|ex:value| project["Proyecto"@es]
+  c02[ex:c02] -->|ex:hasEvaluation| e2((_:e2))
+  e2 -->|ex:value| exam["Examen"@es]

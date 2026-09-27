@@ -1,0 +1,8 @@
+flowchart LR
+  a1["A c01"] -->|"ex:hasEvaluation"| ax((_:x))
+  a2["A c02"] -->|"ex:hasEvaluation"| ax
+  ax -->|"rdf:value"| av["Proyecto"]
+  b1["B c01"] -->|"ex:hasEvaluation"| by((_:y))
+  b2["B c02"] -->|"ex:hasEvaluation"| bz((_:z))
+  by -->|"rdf:value"| bv1["Proyecto"]
+  bz -->|"rdf:value"| bv2["Proyecto"]

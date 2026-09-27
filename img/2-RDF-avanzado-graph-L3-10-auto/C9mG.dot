@@ -1,0 +1,1 @@
+digraph C9mG { graph [rankdir=LR,bgcolor="transparent",pad="0.15"]; node [shape=box,style="rounded,filled",fillcolor="#E8F1FF",color="#3D6FB6",fontname="Arial"]; edge [color="#4C6078",fontname="Arial"]; a [label="ex:Ana"]; b [label="ex:Bruno"]; c [label="ex:Carla"]; a->b [label="ex:collaboratesWith"]; b->c [label="ex:collaboratesWith"]; c->a [label="ex:collaboratesWith"]; }

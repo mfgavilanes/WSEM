@@ -1,0 +1,14 @@
+digraph R4xB {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.15"];
+  node [shape=box, style="rounded,filled", fillcolor="#E8F1FF", color="#3D6FB6", fontname="Arial"];
+  edge [color="#4C6078", fontname="Arial"];
+  seq [label="ex:semester/first"];
+  type [label="rdf:Seq"];
+  c01 [label="course:c01\nWeb Semántica"];
+  c02 [label="course:c02\nAprendizaje Automático I"];
+  c03 [label="course:c03\nSistemas Digitales"];
+  seq -> type [label="rdf:type"];
+  seq -> c01 [label="rdf:_1"];
+  seq -> c02 [label="rdf:_2"];
+  seq -> c03 [label="rdf:_3"];
+}

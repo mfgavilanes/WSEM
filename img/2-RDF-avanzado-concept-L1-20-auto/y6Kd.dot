@@ -1,0 +1,14 @@
+digraph y6Kd {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.15"];
+  node [shape=box, style="rounded,filled", fillcolor="#E8F1FF", color="#3D6FB6", fontname="Arial"];
+  edge [color="#4C6078", fontname="Arial"];
+  semester [label="ex:semester/first"];
+  seq [label="rdf:Seq"];
+  c01 [label="course:c01\nWeb Semántica"];
+  c02 [label="course:c02\nAprendizaje Automático I"];
+  c03 [label="course:c03\nSistemas Digitales"];
+  semester -> seq [label="rdf:type"];
+  semester -> c01 [label="rdf:_1"];
+  semester -> c02 [label="rdf:_2"];
+  semester -> c03 [label="rdf:_3"];
+}
