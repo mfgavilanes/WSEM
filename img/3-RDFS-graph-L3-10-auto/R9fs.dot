@@ -1,0 +1,1 @@
+digraph G { graph [rankdir=LR,bgcolor="transparent"]; coordinates->works[label="rdfs:subPropertyOf"]; works->professor[label="rdfs:domain"]; works->project[label="rdfs:range"]; }

@@ -1,0 +1,143 @@
+::Q7mD 3-RDFS fill L3::
+[markdown]
+Completa el esquema para declarar dos clases y la jerarquía correcta
+```turtle
+  ex\:Student rdf\:type rdfs\:Class .
+  ex\:DoctoralStudent rdf\:type rdfs\:Class .
+  ex\:DoctoralStudent ______ ex\:Student .
+```
+{
+= `rdfs\:subClassOf` # Correcto. La tercera tripleta organiza la clase específica bajo la clase general.
+~ `rdfs\:subPropertyOf` # Incorrecto. Las dos IRIs relacionadas son clases.
+~ `rdfs\:domain` # Incorrecto. El dominio se declara para propiedades.
+~ `rdf\:type` # Incorrecto. Ya se han declarado las dos clases y falta la relación jerárquica.
+}
+
+::v2LR 3-RDFS fill L3::
+[markdown]
+Completa el esquema para expresar que una propiedad específica forma parte de una jerarquía de propiedades
+```turtle
+  ex\:supervises rdf\:type rdf\:Property .
+  ex\:worksWith rdf\:type rdf\:Property .
+  ex\:supervises ______ ex\:worksWith .
+```
+{
+= `rdfs\:subPropertyOf` # Correcto. Esta declaración vincula una propiedad específica con una más general.
+~ `rdfs\:subClassOf` # Incorrecto. Esa relación se utiliza para clases.
+~ `rdfs\:range` # Incorrecto. El rango debe ser una clase asociada al objeto.
+~ `rdfs\:label` # Incorrecto. Una etiqueta debería tener un literal como objeto.
+}
+
+::H8pY 3-RDFS fill L3::
+[markdown]
+Observa el minigrafo y completa el fragmento que describe el papel de los sujetos de `ex\:authorOf`.<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-fill-L3-10-auto/H8pY.svg" alt="Esquema de authorOf"><br>
+```turtle
+  ex\:authorOf ______ ex\:Researcher .
+```
+{
+= `rdfs\:domain` # Correcto. `ex\:Researcher` aparece como clase asociada al sujeto de la propiedad.
+~ `rdfs\:range` # Incorrecto. El rango se asocia al objeto, que en la figura es `ex\:Publication`.
+~ `rdfs\:subClassOf` # Incorrecto. No se está construyendo una jerarquía de clases.
+~ `rdfs\:comment` # Incorrecto. Un comentario debe ser un literal de documentación.
+}
+
+::d4VK 3-RDFS fill L3::
+[markdown]
+Completa el código para reunir el esquema y los datos antes de recorrer solo las tripletas explícitas
+```java
+  Model completeGraph = ModelFactory.createDefaultModel();
+  completeGraph.add(schemaModel);
+  completeGraph.______(dataModel);
+```
+{
+= `add` # Correcto. El segundo `add` incorpora al mismo modelo las tripletas explícitas de datos.
+~ `createResource` # Incorrecto. Crea un recurso, pero no incorpora las tripletas de otro modelo.
+~ `listStatements` # Incorrecto. Recorre afirmaciones y no combina modelos.
+~ `createProperty` # Incorrecto. Crea una propiedad y no añade un modelo.
+}
+
+::a9Ns 3-RDFS fill L3::
+[markdown]
+Completa las dos declaraciones para que una propiedad quede documentada en español e inglés
+```turtle
+  ex\:enrolledIn rdfs\:label "matriculado en"@es .
+  ex\:enrolledIn ______ "enrolled in"@en .
+```
+{
+= `rdfs\:label` # Correcto. Un recurso puede tener varias etiquetas con idiomas diferentes.
+~ `rdfs\:comment` # Incorrecto. Un comentario no completa una segunda etiqueta equivalente.
+~ `rdfs\:domain` # Incorrecto. El objeto de dominio debería ser una clase.
+~ `rdf\:type` # Incorrecto. El objeto de rdf\:type no sería un literal de etiqueta.
+}
+
+::M5xF 3-RDFS fill L3::
+[markdown]
+Completa el patrón de Jena para localizar declaraciones de dominio y construir una tabla propiedad-clase
+```java
+  StmtIterator it = model.listStatements(null, ______, (RDFNode) null);
+```
+{
+= `RDFS.domain` # Correcto. Cada tripleta con ese predicado tiene una propiedad como sujeto y una clase como objeto.
+~ `RDF.type` # Incorrecto. Ese patrón localiza clasificaciones, no declaraciones de dominio.
+~ `RDFS.label` # Incorrecto. Las etiquetas documentan recursos.
+~ `RDFS.subClassOf` # Incorrecto. Esa propiedad recorre jerarquías de clases.
+}
+
+::s1Qe 3-RDFS fill L3::
+[markdown]
+Completa el esquema para separar documentación y significado de la propiedad
+```turtle
+  ex\:takesCourse rdfs\:domain ex\:Student .
+  ex\:takesCourse rdfs\:range ex\:Course .
+  ex\:takesCourse ______ "takes course"@en .
+```
+{
+= `rdfs\:label` # Correcto. El último literal proporciona el nombre legible de la propiedad.
+~ `rdfs\:subPropertyOf` # Incorrecto. El objeto debería ser una propiedad, no un literal.
+~ `rdfs\:domain` # Incorrecto. El dominio ya se declara con una clase como objeto.
+~ `rdf\:type` # Incorrecto. El literal no declara el tipo de la propiedad.
+}
+
+::B3tc 3-RDFS fill L3::
+[markdown]
+Observa la figura y completa la declaración que falta para mantener una separación correcta entre una clase y una propiedad.<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-fill-L3-10-auto/B3tc.svg" alt="Clases y propiedad RDFS"><br>
+```turtle
+  ex\:advises ______ ex\:Professor .
+```
+{
+= `rdfs\:domain` # Correcto. `ex\:advises` es una propiedad y `ex\:Professor` es la clase asociada a sus sujetos.
+~ `rdfs\:subClassOf` # Incorrecto. La figura no sitúa a la propiedad en una jerarquía de clases.
+~ `rdf\:type` # Incorrecto. Esa opción declararía a `ex\:Professor` como tipo de la propiedad, no como dominio.
+~ `rdfs\:label` # Incorrecto. El objeto de una etiqueta debe ser un literal.
+}
+
+::k6Wn 3-RDFS fill L3::
+[markdown]
+Completa el código que recupera las superclases declaradas directamente para `studentClass`
+```java
+  StmtIterator it = studentClass.listProperties(______);
+```
+{
+= `RDFS.subClassOf` # Correcto. Las tripletas que usan ese predicado muestran las superclases declaradas para la clase sujeto.
+~ `RDFS.subPropertyOf` # Incorrecto. Esa propiedad se usa para jerarquías de propiedades.
+~ `RDFS.range` # Incorrecto. El rango se consulta sobre propiedades.
+~ `RDFS.label` # Incorrecto. Las etiquetas documentan la clase y no su jerarquía.
+}
+
+::E7gA 3-RDFS fill L3::
+[markdown]
+Completa el esquema que clasifica la propiedad y define una relación concreta sin usar validación ni inferencia
+```turtle
+  ex\:mentors rdf\:type rdf\:Property .
+  ex\:mentors rdfs\:domain ex\:Mentor .
+  ex\:mentors rdfs\:range ex\:Student .
+  ex\:maria ex\:mentors ______ .
+```
+{
+= `ex\:ana` # Correcto. La última tripleta añade un hecho concreto entre dos recursos.
+~ `rdfs\:domain` # Incorrecto. Es un término del vocabulario, no la estudiante concreta que debe actuar como objeto.
+~ `rdf\:Property` # Incorrecto. Es el recurso usado al declarar una propiedad, no un dato concreto de mentoría.
+~ `rdfs\:Class` # Incorrecto. Es un recurso del vocabulario y no una instancia concreta.
+}

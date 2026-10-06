@@ -1,0 +1,9 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.55", ranksep="0.7"];
+  node [shape=box, style="rounded,filled", fillcolor="#EAF3FF", color="#316A9B", fontname="Arial"];
+  edge [color="#4B5563", fontname="Arial", fontsize=11];
+  AuthorOf [label="ex:authorOf", shape=ellipse, fillcolor="#FFF4D6", color="#B7791F"];
+  Researcher [label="ex:Researcher"]; Publication [label="ex:Publication"];
+  AuthorOf -> Researcher [label="rdfs:domain"];
+  AuthorOf -> Publication [label="rdfs:range"];
+}

@@ -1,0 +1,1 @@
+digraph G { graph [rankdir=LR,bgcolor="transparent"]; coordinates[label="ex:coordinates",shape=ellipse]; works[label="ex:worksWith",shape=ellipse]; professor[label="ex:Professor"]; student[label="ex:Student"]; coordinates->works[label="rdfs:subPropertyOf"]; coordinates->professor[label="rdfs:domain"]; coordinates->student[label="rdfs:range"]; }

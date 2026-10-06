@@ -1,0 +1,201 @@
+::b7Kp 3-RDFS concept L1::
+[markdown]
+¿Qué expresa `ex\:ana rdf\:type ex\:Student`?
+{
+= Que `ex\:ana` pertenece a la clase `ex\:Student`. # Correcto. rdf\:type relaciona una instancia con su clase.
+~ Que `ex\:ana` es una subclase de `ex\:Student`. # Incorrecto. Las subclases se declaran con rdfs\:subClassOf.
+~ Que `ex\:Student` es una propiedad de Ana. # Incorrecto. El objeto representa una clase.
+~ Que Ana tiene la etiqueta Student. # Incorrecto. Las etiquetas se expresan con rdfs\:label.
+}
+
+::M4rx 3-RDFS concept L1::
+[markdown]
+¿Para qué se usa `rdfs\:subClassOf`?
+{
+= Para declarar una jerarquía entre clases. # Correcto. Relaciona una clase específica con otra más general.
+~ Para declarar una jerarquía entre propiedades. # Incorrecto. Para ello se usa rdfs\:subPropertyOf.
+~ Para asignar una etiqueta textual. # Incorrecto. Las etiquetas se añaden con rdfs\:label.
+~ Para crear una instancia. # Incorrecto. Las instancias se asocian a clases con rdf\:type.
+}
+
+::T9wA 3-RDFS concept L1::
+[markdown]
+¿Qué afirma `ex\:Student rdfs\:subClassOf ex\:Person`?
+{
+= Que `ex\:Student` es una clase más específica que `ex\:Person`. # Correcto. La clase del sujeto se sitúa bajo la clase del objeto.
+~ Que `ex\:Person` es una propiedad de `ex\:Student`. # Incorrecto. Ambas IRIs representan clases.
+~ Que `ex\:Person` es una instancia de `ex\:Student`. # Incorrecto. No se usa rdf\:type.
+~ Que las dos clases tienen la misma etiqueta. # Incorrecto. La declaración no trata etiquetas.
+}
+
+::e3Vn 3-RDFS concept L1::
+[markdown]
+¿Para qué se usa `rdfs\:subPropertyOf`?
+{
+= Para organizar una propiedad específica bajo otra más general. # Correcto. Establece una jerarquía entre propiedades.
+~ Para organizar una clase bajo otra clase. # Incorrecto. Esa función corresponde a rdfs\:subClassOf.
+~ Para añadir un comentario. # Incorrecto. Los comentarios se expresan con rdfs\:comment.
+~ Para declarar el rango de una propiedad. # Incorrecto. El rango se declara con rdfs\:range.
+}
+
+::Q6hs 3-RDFS concept L1::
+[markdown]
+¿Qué describe `rdfs\:domain` de una propiedad?
+{
+= La clase asociada al sujeto que usa la propiedad. # Correcto. El dominio se refiere al papel del sujeto.
+~ La clase asociada al objeto que usa la propiedad. # Incorrecto. Esa función corresponde a rdfs\:range.
+~ El texto que etiqueta a la propiedad. # Incorrecto. Eso se expresa con rdfs\:label.
+~ El número de usos permitidos de la propiedad. # Incorrecto. RDFS no establece cardinalidades con rdfs\:domain.
+}
+
+::n2Fy 3-RDFS concept L1::
+[markdown]
+¿Qué describe `rdfs\:range` de una propiedad?
+{
+= La clase asociada al objeto que usa la propiedad. # Correcto. El rango se refiere al papel del objeto.
+~ La clase asociada al sujeto que usa la propiedad. # Incorrecto. Esa función corresponde a rdfs\:domain.
+~ El comentario de la propiedad. # Incorrecto. Los comentarios se añaden con rdfs\:comment.
+~ La superclase de la propiedad. # Incorrecto. Las propiedades no tienen superclases, sino superpropiedades.
+}
+
+::R8dL 3-RDFS concept L1::
+[markdown]
+Observa el minigrafo. ¿Qué representa `ex\:Student`?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-concept-L1-20-auto/R8dL.svg" alt="Clase e instancia RDFS"><br>
+{
+= Una clase a la que pertenece `ex\:ana`. # Correcto. La flecha rdf\:type conecta el recurso concreto con la clase.
+~ Una propiedad que relaciona Ana y Person. # Incorrecto. La relación mostrada usa rdf\:type.
+~ Una etiqueta literal. # Incorrecto. Es un recurso del esquema.
+~ Una subpropiedad de `ex\:Person`. # Incorrecto. El grafo muestra una relación de clases.
+}
+
+::c5ZU 3-RDFS concept L1::
+[markdown]
+¿Para qué se utiliza normalmente `rdfs\:label`?
+{
+= Para asociar un nombre legible a un recurso. # Correcto. La etiqueta facilita la presentación del recurso a las personas.
+~ Para asignar un dominio a una propiedad. # Incorrecto. El dominio se declara con rdfs\:domain.
+~ Para indicar pertenencia a una clase. # Incorrecto. Eso se expresa con rdf\:type.
+~ Para crear un recurso anónimo. # Incorrecto. Una etiqueta documenta un recurso existente.
+}
+
+::J1mQ 3-RDFS concept L1::
+[markdown]
+¿Para qué se utiliza normalmente `rdfs\:comment`?
+{
+= Para añadir una explicación textual sobre un recurso. # Correcto. Un comentario documenta el significado o el uso del recurso.
+~ Para declarar una subclase. # Incorrecto. Las subclases se declaran con rdfs\:subClassOf.
+~ Para indicar el rango de una propiedad. # Incorrecto. El rango se declara con rdfs\:range.
+~ Para identificar una instancia concreta. # Incorrecto. Una instancia se identifica mediante su IRI o un blank node.
+}
+
+::v7CE 3-RDFS concept L1::
+[markdown]
+¿Cuál es una declaración explícita de clase RDFS?
+{
+= `ex\:Course rdf\:type rdfs\:Class` # Correcto. La tripleta declara que `ex\:Course` es una clase.
+~ `ex\:Course rdf\:type ex\:ana` # Incorrecto. Ana no representa una clase del vocabulario.
+~ `ex\:Course rdfs\:label rdfs\:Class` # Incorrecto. Una etiqueta no declara una clase.
+~ `ex\:Course rdfs\:domain rdfs\:Class` # Incorrecto. El dominio se usa para propiedades.
+}
+
+::H4pa 3-RDFS concept L1::
+[markdown]
+¿Cuál es una declaración explícita de propiedad RDF?
+{
+= `ex\:teaches rdf\:type rdf\:Property` # Correcto. La tripleta declara que `ex\:teaches` es una propiedad.
+~ `ex\:teaches rdf\:type rdfs\:Class` # Incorrecto. Eso la declararía como clase.
+~ `ex\:teaches rdfs\:label rdf\:Property` # Incorrecto. Una etiqueta no declara una propiedad.
+~ `ex\:teaches rdfs\:subClassOf rdf\:Property` # Incorrecto. Esa declaración mezcla una relación de clases con una propiedad.
+}
+
+::s6GB 3-RDFS concept L1::
+[markdown]
+Una propiedad `ex\:teaches` tiene dominio `ex\:Teacher` y rango `ex\:Course`. ¿Qué papel tiene `ex\:Teacher`?
+{
+= Es la clase asociada al sujeto de `ex\:teaches`. # Correcto. El dominio describe el papel del sujeto de la propiedad.
+~ Es la clase asociada al objeto de `ex\:teaches`. # Incorrecto. Ese papel corresponde al rango.
+~ Es una subpropiedad de `ex\:teaches`. # Incorrecto. Es una clase asociada al dominio.
+~ Es una etiqueta textual de `ex\:teaches`. # Incorrecto. No es un literal de etiqueta.
+}
+
+::P3kt 3-RDFS concept L1::
+[markdown]
+Una propiedad `ex\:teaches` tiene dominio `ex\:Teacher` y rango `ex\:Course`. ¿Qué papel tiene `ex\:Course`?
+{
+= Es la clase asociada al objeto de `ex\:teaches`. # Correcto. El rango describe el papel del objeto de la propiedad.
+~ Es la clase asociada al sujeto de `ex\:teaches`. # Incorrecto. Ese papel corresponde al dominio.
+~ Es una superpropiedad de `ex\:teaches`. # Incorrecto. Es una clase vinculada al rango.
+~ Es un comentario de `ex\:teaches`. # Incorrecto. No es un literal documental.
+}
+
+::a9WR 3-RDFS concept L1::
+[markdown]
+¿Cuál de estas tripletas es un dato sobre recursos concretos?
+{
+= `ex\:ana ex\:enrolledIn ex\:courseAI` # Correcto. Describe una relación concreta entre Ana y un curso.
+~ `ex\:Student rdfs\:subClassOf ex\:Person` # Incorrecto. Es una declaración de esquema sobre clases.
+~ `ex\:enrolledIn rdfs\:domain ex\:Student` # Incorrecto. Es una declaración de esquema sobre una propiedad.
+~ `ex\:enrolledIn rdfs\:label "enrolled in"@en` # Incorrecto. Documenta una propiedad del vocabulario.
+}
+
+::D5xS 3-RDFS concept L1::
+[markdown]
+¿Cuál de estas tripletas documenta una propiedad?
+{
+= `ex\:enrolledIn rdfs\:comment "Links a student to a course"@en` # Correcto. rdfs\:comment añade documentación textual a la propiedad.
+~ `ex\:ana ex\:enrolledIn ex\:courseAI` # Incorrecto. Es una afirmación de datos sobre recursos concretos.
+~ `ex\:enrolledIn rdfs\:range ex\:Course` # Incorrecto. Declara un rango y no un comentario.
+~ `ex\:Student rdf\:type rdfs\:Class` # Incorrecto. Declara una clase.
+}
+
+::L2qV 3-RDFS concept L1::
+[markdown]
+¿Qué diferencia básica hay entre `ex\:Student` y `ex\:ana` en `ex\:ana rdf\:type ex\:Student`?
+{
+= `ex\:Student` representa una clase y `ex\:ana` una instancia. # Correcto. rdf\:type conecta el individuo con la clase.
+~ `ex\:Student` representa una propiedad y `ex\:ana` su rango. # Incorrecto. La tripleta no declara dominio ni rango.
+~ Ambos representan etiquetas literales. # Incorrecto. Son recursos identificados mediante IRIs.
+~ `ex\:ana` representa una superclase. # Incorrecto. Ana aparece como instancia.
+}
+
+::G6be 3-RDFS concept L1::
+[markdown]
+¿Qué ocurre al añadir un modelo de esquema y un modelo de datos a un mismo `Model` de Jena?
+{
+= El modelo resultante puede contener las tripletas explícitas de ambos. # Correcto. Jena puede combinar los grafos RDF en un mismo modelo.
+~ El modelo conserva solo las clases del esquema. # Incorrecto. También conserva los hechos del modelo de datos.
+~ El modelo elimina las propiedades de los datos. # Incorrecto. Añadir modelos no elimina las tripletas existentes.
+~ El modelo convierte automáticamente cada dato en una clase. # Incorrecto. Combinar modelos no cambia el papel de sus recursos.
+}
+
+::w1Jf 3-RDFS concept L1::
+[markdown]
+Observa el minigrafo. ¿Qué declaración corresponde al dominio de `ex\:advises`?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-concept-L1-20-auto/w1Jf.svg" alt="Dominio y rango de una propiedad RDFS"><br>
+{
+= `ex\:advises rdfs\:domain ex\:Professor` # Correcto. La flecha etiquetada como dominio parte de la propiedad y llega a `ex\:Professor`.
+~ `ex\:advises rdfs\:range ex\:Professor` # Incorrecto. `ex\:Professor` aparece asociado al dominio.
+~ `ex\:Professor rdfs\:domain ex\:advises` # Incorrecto. Invierte el papel de propiedad y clase.
+~ `ex\:Professor rdfs\:subClassOf ex\:advises` # Incorrecto. El grafo no muestra una jerarquía de clases.
+}
+
+::Y3cu 3-RDFS concept L1::
+[markdown]
+¿Qué patrón identifica clases declaradas explícitamente en un modelo?
+{
+= Recursos con `rdf\:type` igual a `rdfs\:Class`. # Correcto. Ese patrón corresponde a la declaración explícita de una clase.
+~ Recursos con `rdfs\:label` igual a `rdfs\:Class`. # Incorrecto. Las etiquetas no declaran clases.
+~ Recursos con `rdfs\:domain` igual a `rdf\:type`. # Incorrecto. El dominio se declara sobre propiedades.
+~ Recursos con `rdf\:type` igual a `rdf\:Property`. # Incorrecto. Ese patrón identifica propiedades.
+}
+
+::k4MP 3-RDFS concept L1::
+[markdown]
+¿Por qué `rdfs\:domain` y `rdfs\:range` no deben usarse como reglas de validación estricta?
+{
+= Porque aportan significado semántico, pero por sí solos no rechazan tripletas del modelo. # Correcto. RDFS describe los recursos y no realiza validación cerrada.
+~ Porque solo pueden usarse con etiquetas de idioma. # Incorrecto. Se usan para describir propiedades y clases.
+~ Porque eliminan automáticamente los datos incorrectos. # Incorrecto. RDFS no elimina tripletas.
+~ Porque convierten todas las propiedades en clases. # Incorrecto. Dominio y rango no cambian la naturaleza de una propiedad.
+}

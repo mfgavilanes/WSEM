@@ -1,0 +1,209 @@
+::m8Qc 3-RDFS concept L3::
+[markdown]
+Observa el grafo. Sin usar un razonador, ¿qué descripción separa correctamente esquema, datos y documentación?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-concept-L3-20-auto/m8Qc.svg" alt="Esquema, datos y documentación RDFS"><br>
+{
+= Las clases, la propiedad y sus declaraciones RDFS forman el esquema; la matrícula de Ana es un dato; la etiqueta documenta la propiedad. # Correcto. El grafo combina vocabulario, hechos sobre recursos concretos y documentación del vocabulario.
+~ La matrícula de Ana forma parte del esquema porque usa una propiedad declarada. # Incorrecto. Que una tripleta use una propiedad del esquema no la convierte en una declaración de esquema.
+~ La etiqueta convierte automáticamente la propiedad en una clase. # Incorrecto. rdfs\:label documenta un recurso sin cambiar su papel.
+~ Las clases solo pueden aparecer en datos y nunca en un esquema. # Incorrecto. Las clases son elementos centrales de un esquema RDFS.
+}
+
+::F3tv 3-RDFS concept L3::
+[markdown]
+Se diseña un vocabulario universitario con las clases `ex\:Person`, `ex\:Student`, `ex\:Course` y `ex\:MasterCourse`. ¿Qué conjunto de declaraciones expresa que los dos últimos tipos son especializaciones adecuadas?
+{
+= `ex\:Student rdfs\:subClassOf ex\:Person` y `ex\:MasterCourse rdfs\:subClassOf ex\:Course`. # Correcto. Cada declaración organiza una clase específica bajo una más general.
+~ `ex\:Person rdfs\:subClassOf ex\:Student` y `ex\:Course rdfs\:subClassOf ex\:MasterCourse`. # Incorrecto. Invierte ambas jerarquías.
+~ `ex\:Student rdfs\:subPropertyOf ex\:Person` y `ex\:MasterCourse rdfs\:subPropertyOf ex\:Course`. # Incorrecto. Las relaciones propuestas organizan clases, no propiedades.
+~ `ex\:Student rdfs\:domain ex\:Person` y `ex\:MasterCourse rdfs\:range ex\:Course`. # Incorrecto. Dominio y rango describen propiedades, no jerarquías entre clases.
+}
+
+::K7aP 3-RDFS concept L3::
+[markdown]
+Un equipo quiere que `ex\:enrolledIn` relacione estudiantes con asignaturas y que `ex\:thesisEnrolledIn` exprese el caso más específico de matrícula en un TFM. ¿Qué diseño reúne correctamente jerarquía de propiedades y tipos esperados?
+{
+= Declarar `ex\:thesisEnrolledIn rdfs\:subPropertyOf ex\:enrolledIn`, y asociar `ex\:enrolledIn` con dominio `ex\:Student` y rango `ex\:Course`. # Correcto. La propiedad específica se organiza bajo la general y el dominio y rango describen sus papeles.
+~ Declarar `ex\:enrolledIn rdfs\:subPropertyOf ex\:thesisEnrolledIn`, y usar `ex\:Student` como etiqueta. # Incorrecto. Invierte la especialización y confunde una clase con una etiqueta.
+~ Declarar `ex\:Student rdfs\:subPropertyOf ex\:Course`, y usar `ex\:enrolledIn` como clase. # Incorrecto. Estudiante y asignatura son clases, mientras que la matrícula es una propiedad.
+~ Declarar `ex\:thesisEnrolledIn rdfs\:subClassOf ex\:enrolledIn`, sin dominio ni rango. # Incorrecto. La jerarquía indicada debe ser entre propiedades, no entre clases.
+}
+
+::u5LD 3-RDFS concept L3::
+[markdown]
+Un modelo contiene datos y esquema en archivos separados. Se busca inspeccionar simultáneamente las clases declaradas, los dominios de las propiedades y las matrículas concretas sin activar inferencia. ¿Qué preparación es la más apropiada en Jena?
+{
+= Cargar ambos archivos en modelos y añadirlos a un mismo `Model` para recorrer sus tripletas explícitas. # Correcto. Un modelo combinado permite consultar datos y esquema manteniendo separada la inferencia.
+~ Cargar solo los datos porque las clases y propiedades se reconstruyen a partir de las instancias. # Incorrecto. Las declaraciones del esquema no aparecen automáticamente al cargar solo datos.
+~ Cargar solo el esquema porque contiene toda la información de las matrículas. # Incorrecto. El esquema define vocabulario, pero los hechos concretos están en los datos.
+~ Sustituir las clases y propiedades por sus etiquetas antes de combinar los archivos. # Incorrecto. Las IRIs identifican los recursos semánticos y no deben reemplazarse por etiquetas.
+}
+
+::R1yH 3-RDFS concept L3::
+[markdown]
+Un `Model` combinado contiene las tripletas siguientes. ¿Qué resultado se obtiene al buscar recursos con `rdf\:type` igual a `rdfs\:Class`?
+{
+```turtle
+  ex\:Student rdf\:type rdfs\:Class .
+  ex\:Course rdf\:type rdfs\:Class .
+  ex\:ana rdf\:type ex\:Student .
+  ex\:ai rdf\:type ex\:Course .
+```
+{
+= `ex\:Student` y `ex\:Course` # Correcto. Esas dos tripletas declaran explícitamente clases del esquema.
+~ `ex\:ana` y `ex\:ai` # Incorrecto. Son recursos concretos tipados mediante clases del esquema.
+~ `ex\:Student` y `ex\:ana` # Incorrecto. Solo `ex\:Student` tiene como objeto `rdfs\:Class`.
+~ Las cuatro IRIs # Incorrecto. El patrón busca una declaración específica de clase y no cualquier uso de rdf\:type.
+}
+
+::c9Bw 3-RDFS concept L3::
+[markdown]
+¿Qué lectura es correcta para una propiedad que tiene `rdfs\:domain ex\:Teacher`, `rdfs\:range ex\:Course` y `rdfs\:label "teaches"@en`?
+{
+= La propiedad relaciona el papel de docente en el sujeto con el de asignatura en el objeto, y dispone además de una etiqueta en inglés. # Correcto. Dominio, rango y etiqueta aportan tres tipos de información complementaria sobre una misma propiedad.
+~ La propiedad declara que cada curso es una subclase de docente y que solo puede usar inglés. # Incorrecto. No hay una jerarquía de clases ni una restricción de idioma.
+~ La propiedad convierte cada docente en un literal llamado `teaches`. # Incorrecto. La etiqueta es un literal asociado a la propiedad, no a sus sujetos.
+~ La propiedad valida que solo existan docentes y asignaturas previamente declarados. # Incorrecto. RDFS aporta significado, pero no realiza validación cerrada de los datos.
+}
+
+::p4NM 3-RDFS concept L3::
+[markdown]
+Observa el grafo de propiedades. ¿Qué opción describe una organización coherente sin confundir jerarquías de clases y de propiedades?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-concept-L3-20-auto/p4NM.svg" alt="Jerarquía de propiedades y dominio rango"><br>
+{
+= `ex\:mentors` es una especialización de `ex\:supports`; el dominio y rango declarados pertenecen a la propiedad general. # Correcto. El grafo usa rdfs\:subPropertyOf para propiedades y rdfs\:domain y rdfs\:range para describir sus papeles.
+~ `ex\:Mentor` es una subpropiedad de `ex\:Student`. # Incorrecto. `ex\:Mentor` y `ex\:Student` aparecen como clases vinculadas al dominio y rango.
+~ `ex\:supports` es una subclase de `ex\:mentors`. # Incorrecto. La relación del grafo se establece entre propiedades y no entre clases.
+~ `ex\:Student` es una etiqueta textual de `ex\:supports`. # Incorrecto. `ex\:Student` se utiliza como recurso que representa una clase.
+}
+
+::A6qe 3-RDFS concept L3::
+[markdown]
+Un modelo declara `ex\:DoctoralStudent rdfs\:subClassOf ex\:Student` y `ex\:Student rdfs\:subClassOf ex\:Person`. Sin calcular nuevas tripletas, ¿qué afirmación puede recuperarse directamente recorriendo las declaraciones cuyo sujeto es `ex\:Student` y predicado `rdfs\:subClassOf`?
+{
+= Que `ex\:Person` es la superclase declarada directamente de `ex\:Student`. # Correcto. Esa información está explícitamente escrita en la segunda declaración.
+~ Que `ex\:DoctoralStudent` es una instancia de `ex\:Person`. # Incorrecto. La pregunta no consulta instancias ni solicita inferencia.
+~ Que `ex\:Person` es una subclase de `ex\:Student`. # Incorrecto. Invierte el sentido de rdfs\:subClassOf.
+~ Que todas las personas son estudiantes. # Incorrecto. La declaración no afirma esa relación en sentido inverso.
+}
+
+::g2XF 3-RDFS concept L3::
+[markdown]
+En una revisión de un esquema se encuentran las siguientes tripletas. ¿Cuál mezcla incorrectamente el papel de datos y vocabulario?
+{
+= `ex\:ana rdfs\:subClassOf ex\:Student` # Correcto. Ana representa una persona concreta y no debería organizarse como una clase bajo `ex\:Student`.
+~ `ex\:Student rdfs\:subClassOf ex\:Person` # Incorrecto. Es una declaración habitual de jerarquía entre clases.
+~ `ex\:takesCourse rdfs\:domain ex\:Student` # Incorrecto. Es una declaración de dominio para una propiedad del esquema.
+~ `ex\:ana ex\:takesCourse ex\:webSemantics` # Incorrecto. Es un dato válido que aplica una propiedad a recursos concretos.
+}
+
+::N8sk 3-RDFS concept L3::
+[markdown]
+Un vocabulario debe ser comprensible para alumnado en español e inglés, manteniendo las mismas IRIs estables. ¿Qué opción es la más adecuada?
+{
+= Añadir varias tripletas `rdfs\:label` y `rdfs\:comment` con literales y etiquetas de idioma para cada término relevante. # Correcto. Las IRIs permanecen estables y las anotaciones permiten presentar y documentar el vocabulario en varios idiomas.
+~ Crear una IRI diferente para cada traducción y no añadir etiquetas. # Incorrecto. Duplica innecesariamente los términos que representan el mismo concepto.
+~ Usar `rdfs\:subClassOf` para traducir los nombres de las clases. # Incorrecto. Las jerarquías no expresan traducciones ni documentación.
+~ Usar `rdfs\:domain` con el texto español y `rdfs\:range` con el texto inglés. # Incorrecto. Dominio y rango no son mecanismos de internacionalización.
+}
+
+::D7rV 3-RDFS concept L3::
+[markdown]
+¿Qué diseño representa mejor una propiedad `ex\:hasThesisTitle` que relaciona una tesis con un título textual?
+{
+= Declarar dominio `ex\:Thesis`, usar como objeto un literal de título y documentar la propiedad con `rdfs\:label`. # Correcto. El sujeto desempeña el papel de tesis y el título es un valor textual que puede documentarse mediante una etiqueta de propiedad.
+~ Declarar `ex\:hasThesisTitle` como subclase de `ex\:Thesis` y usar el título como sujeto. # Incorrecto. Una relación entre una tesis y un valor se modela mediante una propiedad.
+~ Declarar `ex\:Thesis` como subpropiedad de `ex\:hasThesisTitle`. # Incorrecto. Mezcla una clase con una propiedad en una jerarquía de propiedades.
+~ Utilizar `rdfs\:comment` como predicado de la tesis para sustituir la propiedad. # Incorrecto. Un comentario documenta un recurso, pero no expresa específicamente la relación de título.
+}
+
+::v3GK 3-RDFS concept L3::
+[markdown]
+Se han combinado un archivo de esquema y uno de datos, pero se observa que una consulta de Jena solo devuelve dos clases aunque se esperaba encontrar cuatro. ¿Qué comprobación ayuda primero a distinguir un problema de carga de un problema de inferencia?
+{
+= Verificar las tripletas explícitas `rdf\:type rdfs\:Class` presentes en el modelo combinado. # Correcto. Esa comprobación muestra qué clases se declararon realmente y no depende de consecuencias inferidas.
+~ Convertir todas las etiquetas en subclases. # Incorrecto. Las etiquetas no sustituyen a las declaraciones de clase.
+~ Eliminar los datos individuales antes de recorrer el modelo. # Incorrecto. Los datos no impiden localizar clases declaradas mediante el patrón adecuado.
+~ Considerar que las clases no devueltas son falsas o inexistentes. # Incorrecto. La ausencia de un resultado no permite concluir por sí sola esa afirmación semántica.
+}
+
+::L5mJ 3-RDFS concept L3::
+[markdown]
+Observa el minigrafo. ¿Qué afirmación requiere solo interpretar las tripletas explícitas y no aplicar inferencia?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-concept-L3-20-auto/L5mJ.svg" alt="Grafo RDFS con clases, propiedad y dato"><br>
+{
+= La propiedad `ex\:advises` está documentada con una etiqueta y posee una declaración de dominio. # Correcto. Ambas tripletas aparecen explícitamente en el minigrafo.
+~ `ex\:luis` pertenece a todas las clases de la jerarquía. # Incorrecto. Esa conclusión no aparece explícita y exigiría razonamiento que no se pide.
+~ La propiedad `ex\:advises` solo puede tener una afirmación por profesor. # Incorrecto. El grafo no expresa ninguna cardinalidad.
+~ `ex\:DoctoralStudent` es una propiedad de `ex\:luis`. # Incorrecto. Es una clase usada como objeto de rdf\:type.
+}
+
+::S1hz 3-RDFS concept L3::
+[markdown]
+¿Cuál es el mejor criterio para decidir si una tripleta debe residir principalmente en el archivo de esquema o en el archivo de datos?
+{
+= Si define el significado reutilizable de clases o propiedades, pertenece al esquema; si describe una entidad o relación concreta, pertenece a los datos. # Correcto. Este criterio separa vocabulario y hechos particulares sin depender de la serialización usada.
+~ Si contiene una IRI, pertenece al esquema; si contiene un literal, pertenece a los datos. # Incorrecto. Tanto esquema como datos pueden contener IRIs y literales.
+~ Si usa rdfs, pertenece siempre a los datos. # Incorrecto. Las propiedades RDFS se emplean habitualmente para describir el esquema y su documentación.
+~ Si tiene tres nodos distintos, pertenece al esquema. # Incorrecto. El número de nodos no determina el papel de una tripleta.
+}
+
+::q9EP 3-RDFS concept L3::
+[markdown]
+Un diseñador declara `ex\:coordinates rdfs\:subPropertyOf ex\:worksWith`, `ex\:coordinates rdfs\:domain ex\:Professor` y `ex\:coordinates rdfs\:range ex\:Project`. ¿Qué resumen es correcto?
+{
+= `ex\:coordinates` es una relación específica entre los papeles de profesor y proyecto, organizada bajo una relación más general de colaboración. # Correcto. La respuesta integra jerarquía de propiedad, dominio y rango sin tratar esas declaraciones como restricciones de validación.
+~ `ex\:Professor` es una subpropiedad de `ex\:Project`. # Incorrecto. Son clases asociadas a dominio y rango, no propiedades en una jerarquía.
+~ `ex\:worksWith` es una clase que coordina proyectos. # Incorrecto. Se utiliza como la propiedad general de la jerarquía.
+~ Cada profesor solo puede coordinar un proyecto. # Incorrecto. No se han declarado cardinalidades.
+}
+
+::H4cu 3-RDFS concept L3::
+[markdown]
+¿Qué recorrido de un `Model` es más apropiado para elaborar una tabla con cada propiedad y su dominio explícitamente declarado?
+{
+= Recorrer las tripletas cuyo predicado es `rdfs\:domain`, usando el sujeto como propiedad y el objeto como clase de dominio. # Correcto. Esa es exactamente la estructura de una declaración de dominio.
+~ Recorrer las tripletas con predicado `rdf\:type`, usando siempre el objeto como propiedad. # Incorrecto. rdf\:type se usa para clasificar recursos y no identifica por sí mismo declaraciones de dominio.
+~ Recorrer las etiquetas y tratar cada literal como una clase. # Incorrecto. Las etiquetas documentan recursos, pero no expresan el dominio de una propiedad.
+~ Recorrer únicamente las tripletas de datos porque el dominio se calcula a partir de ellas. # Incorrecto. La tabla solicitada debe reflejar declaraciones explícitas del esquema.
+}
+
+::e6ZR 3-RDFS concept L3::
+[markdown]
+En un esquema, `ex\:Course` tiene una etiqueta y un comentario, mientras que `ex\:CourseAI` solo aparece como objeto de una matrícula concreta. ¿Qué interpretación es la más adecuada?
+{
+= `ex\:Course` es un término del vocabulario documentado y `ex\:CourseAI` es un recurso concreto usado en los datos. # Correcto. La documentación RDFS suele acompañar a las clases y propiedades del esquema, mientras que el curso concreto representa una entidad del dominio.
+~ Ambos recursos son necesariamente clases porque tienen nombres que empiezan por `Course`. # Incorrecto. El nombre de una IRI no determina su papel semántico.
+~ `ex\:CourseAI` es una etiqueta lingüística de `ex\:Course`. # Incorrecto. Una etiqueta es un literal asociado con rdfs\:label.
+~ `ex\:Course` es una instancia creada por la matrícula. # Incorrecto. Su uso como término documentado del vocabulario lo distingue de los hechos concretos.
+}
+
+::w2Cb 3-RDFS concept L3::
+[markdown]
+¿Por qué no debe tratarse `rdfs\:domain` como una regla de validación de formularios en esta práctica?
+{
+= Porque su función es aportar significado a las tripletas del grafo, mientras que validar restricciones requiere mecanismos específicos de validación. # Correcto. RDFS no impone por sí mismo controles cerrados sobre qué datos se pueden introducir.
+~ Porque el dominio solo puede usarse en comentarios y no en propiedades. # Incorrecto. rdfs\:domain se declara precisamente sobre propiedades.
+~ Porque el dominio elimina la necesidad de usar clases. # Incorrecto. El dominio hace referencia a una clase y no la reemplaza.
+~ Porque el dominio convierte cada objeto en una etiqueta. # Incorrecto. Dominio y etiquetas desempeñan funciones diferentes.
+}
+
+::B8nf 3-RDFS concept L3::
+[markdown]
+Se quiere presentar en una interfaz el nombre legible de cada clase y, al seleccionar una propiedad, mostrar una explicación más extensa. ¿Qué pares de declaraciones deben consultarse?
+{
+= `rdfs\:label` para los nombres de las clases y `rdfs\:comment` para las explicaciones de las propiedades. # Correcto. Las etiquetas proporcionan nombres breves y los comentarios permiten documentación más amplia.
+~ `rdfs\:subClassOf` para los nombres y `rdfs\:subPropertyOf` para las explicaciones. # Incorrecto. Esas propiedades organizan jerarquías y no contienen texto de presentación.
+~ `rdfs\:domain` para los nombres y `rdfs\:range` para las explicaciones. # Incorrecto. Dominio y rango describen los papeles de una propiedad.
+~ `rdf\:type` para los nombres y `rdfs\:Class` para las explicaciones. # Incorrecto. Esos términos sirven para clasificar y declarar clases, no para documentar texto.
+}
+
+::Y7pd 3-RDFS concept L3::
+[markdown]
+Un modelo contiene una clase `ex\:Seminar`, una propiedad `ex\:attends` y el dato `ex\:ana ex\:attends ex\:seminar1`. ¿Qué ampliación conserva mejor una separación limpia entre vocabulario y datos?
+{
+= Añadir `ex\:attends rdfs\:domain ex\:Student`, `ex\:attends rdfs\:range ex\:Seminar` y una etiqueta para la propiedad, manteniendo las asistencias concretas como datos. # Correcto. Las nuevas tripletas describen la propiedad y los recursos concretos permanecen en las afirmaciones de asistencia.
+~ Convertir `ex\:ana` en una subclase de `ex\:Student` para indicar que asiste al seminario. # Incorrecto. La asistencia es un dato y Ana es una entidad concreta, no una clase.
+~ Usar `rdfs\:comment` como única relación entre Ana y el seminario. # Incorrecto. Un comentario no reemplaza a la propiedad que expresa la asistencia.
+~ Declarar `ex\:seminar1 rdfs\:subPropertyOf ex\:attends`. # Incorrecto. Un seminario concreto no debe ocupar el papel de una propiedad en la jerarquía.
+}

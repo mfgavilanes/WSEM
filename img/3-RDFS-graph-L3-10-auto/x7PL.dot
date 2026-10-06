@@ -1,0 +1,1 @@
+digraph G { graph [rankdir=LR,bgcolor="transparent"]; ta->student[label="rdfs:subClassOf"]; advises->professor[label="rdfs:domain"]; advises->student[label="rdfs:range"]; maria->ana[label="ex:advises"]; }

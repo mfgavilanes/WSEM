@@ -1,0 +1,1 @@
+digraph G { graph [rankdir=LR,bgcolor="transparent"]; ana[label="ex:ana"]; student[label="ex:Student"]; person[label="ex:Person"]; course[label="ex:courseAI"]; enrolled[label="ex:enrolledIn",shape=ellipse]; ana->student[label="rdf:type"]; student->person[label="rdfs:subClassOf"]; ana->course[label="ex:enrolledIn"]; enrolled->student[label="rdfs:domain"]; }

@@ -1,0 +1,129 @@
+::p7Qm 3-RDFS debug L3::
+[markdown]
+El objetivo es declarar una clase, una propiedad y un dato. ¿Qué línea contiene el error conceptual?
+```turtle
+  ex\:Student rdf\:type rdfs\:Class .
+  ex\:enrolledIn rdf\:type rdf\:Property .
+  ex\:ana rdfs\:subClassOf ex\:Student .
+```
+{
+= La tercera línea debe usar `rdf\:type` porque Ana es una instancia y no una clase. # Correcto. Las dos primeras líneas declaran elementos de vocabulario y la tercera debe expresar el dato de pertenencia.
+~ La primera línea debe usar `rdf\:Property`. # Incorrecto. `ex\:Student` se usa como clase.
+~ La segunda línea debe usar `rdfs\:Class`. # Incorrecto. `ex\:enrolledIn` se usa como propiedad.
+~ Las tres líneas son correctas. # Incorrecto. La tercera confunde un individuo con una clase.
+}
+
+::V4kT 3-RDFS debug L3::
+[markdown]
+Un esquema pretende definir una jerarquía de propiedades y sus papeles. ¿Qué corrección es necesaria?
+```turtle
+  ex\:supervises rdfs\:subPropertyOf ex\:worksWith .
+  ex\:supervises rdfs\:domain ex\:Professor .
+  ex\:Project rdfs\:range ex\:supervises .
+```
+{
+= La tercera línea debe ser `ex\:supervises rdfs\:range ex\:Project`. # Correcto. El sujeto de una declaración de rango es la propiedad y el objeto es la clase asociada.
+~ La primera línea debe usar `rdfs\:subClassOf`. # Incorrecto. La relación está establecida entre propiedades.
+~ La segunda línea debe usar `rdfs\:label`. # Incorrecto. El objetivo es declarar el dominio de la propiedad.
+~ Debe eliminarse `ex\:Professor` porque las propiedades no tienen dominio. # Incorrecto. El dominio es precisamente una declaración RDFS de propiedades.
+}
+
+::b9RL 3-RDFS debug L3::
+[markdown]
+Observa el minigrafo. ¿Qué añadido rompería la separación entre datos y esquema?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-debug-L3-10-auto/b9RL.svg" alt="Datos y esquema de matrícula"><br>
+{
+= `ex\:ana rdfs\:subClassOf ex\:Student` # Correcto. Ana es un recurso concreto de los datos y no debe utilizarse como subclase.
+~ `ex\:Student rdfs\:subClassOf ex\:Person` # Incorrecto. Es una declaración de esquema coherente.
+~ `ex\:enrolledIn rdfs\:domain ex\:Student` # Incorrecto. Es una declaración de dominio coherente.
+~ `ex\:ana ex\:enrolledIn ex\:courseAI` # Incorrecto. Es un dato concreto coherente con el escenario.
+}
+
+::N6dA 3-RDFS debug L3::
+[markdown]
+¿Qué problema presenta este código para combinar datos y esquema?
+```java
+  Model completeGraph = ModelFactory.createDefaultModel();
+  completeGraph.add(schemaModel);
+  completeGraph = dataModel;
+```
+{
+= La última línea descarta el modelo combinado y debe reemplazarse por `completeGraph.add(dataModel)`. # Correcto. Una asignación sustituye la referencia en vez de añadir las tripletas de datos.
+~ Debe eliminarse `schemaModel` porque los datos contienen las clases. # Incorrecto. El esquema y los datos cumplen papeles complementarios.
+~ Debe usarse `createResource(dataModel)`. # Incorrecto. Ese método no combina modelos.
+~ El código activa automáticamente la inferencia RDFS. # Incorrecto. No se crea ningún modelo de inferencia.
+}
+
+::q2Ys 3-RDFS debug L3::
+[markdown]
+Se quieren recuperar las clases declaradas explícitamente y sus etiquetas en un modelo. ¿Qué uso es erróneo?
+```java
+  ResIterator classes = model.listResourcesWithProperty(RDF.type, RDFS.Class);
+  StmtIterator labels = model.listStatements(null, RDFS.label, (RDFNode) null);
+  StmtIterator domains = model.listStatements(null, RDFS.Class, (RDFNode) null);
+```
+{
+= La tercera línea es errónea porque `RDFS.Class` es un recurso y no el predicado de una declaración de dominio. # Correcto. Para recorrer dominios debe emplearse `RDFS.domain` como predicado.
+~ La primera línea es errónea porque las clases no pueden buscarse. # Incorrecto. El patrón rdf\:type rdfs\:Class es apropiado.
+~ La segunda línea es errónea porque una etiqueta no puede ser un literal. # Incorrecto. Las etiquetas se expresan normalmente mediante literales.
+~ Ninguna línea es errónea. # Incorrecto. La tercera confunde un recurso de vocabulario con una propiedad.
+}
+
+::F8we 3-RDFS debug L3::
+[markdown]
+¿Qué corrección mantiene documentación bilingüe sin confundirla con jerarquías?
+```turtle
+  ex\:Course rdfs\:label "Curso"@es .
+  ex\:Course rdfs\:subClassOf "Course"@en .
+  ex\:Course rdfs\:comment "A unit of study"@en .
+```
+{
+= Sustituir `rdfs\:subClassOf` por `rdfs\:label` en la segunda línea. # Correcto. El segundo literal debe aportar otra etiqueta de idioma y no una relación de clases.
+~ Sustituir `rdfs\:label` por `rdfs\:range` en la primera línea. # Incorrecto. El primer literal ya es una etiqueta adecuada.
+~ Sustituir `rdfs\:comment` por `rdf\:type` en la tercera línea. # Incorrecto. La tercera línea documenta correctamente la clase.
+~ Declarar el literal inglés como `rdf\:Property`. # Incorrecto. Un literal no representa una propiedad del vocabulario.
+}
+
+::Z5cH 3-RDFS debug L3::
+[markdown]
+Un estudiante interpreta dominio y rango como restricciones de validación. ¿Qué línea de su explicación debe corregirse?
+{
+= `RDFS eliminará cualquier matrícula cuyo sujeto no esté declarado antes como estudiante.` # Correcto. Dominio y rango aportan significado, pero no eliminan ni rechazan tripletas por sí solos.
+~ `El dominio describe el papel asociado al sujeto de una propiedad.` # Incorrecto. Esta explicación es correcta.
+~ `El rango describe el papel asociado al objeto de una propiedad.` # Incorrecto. Esta explicación es correcta.
+~ `Dominio y rango se declaran en el esquema.` # Incorrecto. Esta explicación es correcta.
+}
+
+::e1PK 3-RDFS debug L3::
+[markdown]
+El siguiente código busca las superclases declaradas directamente para `studentClass`. ¿Qué corrección necesita?
+```java
+  StmtIterator it = studentClass.listProperties(RDFS.subPropertyOf);
+```
+{
+= Debe usarse `RDFS.subClassOf` porque `studentClass` representa una clase. # Correcto. `RDFS.subPropertyOf` se utiliza para organizar propiedades.
+~ Debe usarse `RDF.type` porque toda superclase es una instancia. # Incorrecto. El objetivo es recorrer declaraciones jerárquicas de clase.
+~ Debe usarse `RDFS.label` porque la jerarquía se almacena como texto. # Incorrecto. Las etiquetas no codifican la jerarquía.
+~ No necesita corrección. # Incorrecto. El predicado no corresponde al tipo de jerarquía buscada.
+}
+
+::L3vf 3-RDFS debug L3::
+[markdown]
+Observa el minigrafo. ¿Qué afirmación de depuración identifica correctamente el error?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-debug-L3-10-auto/L3vf.svg" alt="Jerarquía de clases y propiedades"><br>
+{
+= Si se sustituyera `rdfs\:subPropertyOf` por `rdfs\:subClassOf` entre `ex\:coordinates` y `ex\:worksWith`, se mezclarían propiedades con una jerarquía de clases. # Correcto. Las dos IRIs representan propiedades del vocabulario.
+~ `ex\:Student` no puede aparecer como rango de una propiedad. # Incorrecto. Una clase puede ser el rango de una propiedad.
+~ `ex\:coordinates` debe convertirse en un literal. # Incorrecto. Es una propiedad que representa una relación.
+~ El dominio debe escribirse como un literal. # Incorrecto. El dominio se declara con una clase como objeto.
+}
+
+::s7MG 3-RDFS debug L3::
+[markdown]
+Un fichero de datos y otro de esquema se cargan correctamente, pero el programa solo recorre `dataModel` al buscar etiquetas de las clases. ¿Qué corrección es más adecuada?
+{
+= Recorrer el modelo combinado que incluye esquema y datos, porque las etiquetas de las clases pertenecen normalmente al esquema. # Correcto. Buscar solo en datos puede omitir la documentación y las clases declaradas.
+~ Copiar cada etiqueta como literal dentro de cada dato. # Incorrecto. Duplica la documentación del vocabulario innecesariamente.
+~ Convertir las clases en propiedades antes de recorrerlas. # Incorrecto. Las clases y propiedades tienen papeles diferentes.
+~ Suponer que la ausencia de una etiqueta demuestra que la clase no existe. # Incorrecto. La ausencia de una tripleta no implica esa conclusión.
+}

@@ -1,0 +1,1 @@
+digraph G { advises->professor[label="rdfs:domain"]; advises->student[label="rdfs:range"]; }

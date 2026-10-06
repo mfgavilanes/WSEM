@@ -1,0 +1,1 @@
+digraph G { graph [rankdir=LR,bgcolor="transparent"]; teaches [label="ex:teaches",shape=ellipse]; teacher [label="ex:Teacher"]; course [label="ex:Course"]; teaches->teacher[label="rdfs:domain"]; teaches->course[label="rdfs:range"]; }

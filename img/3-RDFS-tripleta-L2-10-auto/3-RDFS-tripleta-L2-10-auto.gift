@@ -1,0 +1,101 @@
+::H7pR 3-RDFS tripleta L2::
+[markdown]
+¿Qué tripleta declara que `ex\:Student` es una clase?
+{
+= `ex\:Student rdf\:type rdfs\:Class` # Correcto. El objeto rdfs\:Class declara explícitamente una clase.
+~ `ex\:Student rdf\:type rdf\:Property` # Incorrecto. Declararía una propiedad.
+~ `ex\:Student rdfs\:label rdfs\:Class` # Incorrecto. Una etiqueta no declara una clase.
+~ `rdfs\:Class rdf\:type ex\:Student` # Incorrecto. Invierte la declaración.
+}
+
+::k4Wy 3-RDFS tripleta L2::
+[markdown]
+¿Qué tripleta representa que Ana pertenece a la clase estudiante?
+{
+= `ex\:ana rdf\:type ex\:Student` # Correcto. rdf\:type conecta la instancia con su clase.
+~ `ex\:ana rdfs\:subClassOf ex\:Student` # Incorrecto. Eso trataría a Ana como clase.
+~ `ex\:Student rdf\:type ex\:ana` # Incorrecto. Invierte instancia y clase.
+~ `ex\:ana rdfs\:label ex\:Student` # Incorrecto. Una etiqueta no expresa pertenencia.
+}
+
+::P8sa 3-RDFS tripleta L2::
+[markdown]
+Observa el minigrafo. ¿Qué tripleta corresponde a la flecha de jerarquía?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-tripleta-L2-10-auto/P8sa.svg" alt="Jerarquía de clases"><br>
+{
+= `ex\:TeachingAssistant rdfs\:subClassOf ex\:Student` # Correcto. La flecha une la clase específica con la más general.
+~ `ex\:Student rdfs\:subClassOf ex\:TeachingAssistant` # Incorrecto. Invierte la dirección del grafo.
+~ `ex\:TeachingAssistant rdf\:type ex\:Student` # Incorrecto. La figura muestra una relación entre clases.
+~ `ex\:TeachingAssistant rdfs\:subPropertyOf ex\:Student` # Incorrecto. No organiza propiedades.
+}
+
+::d2MV 3-RDFS tripleta L2::
+[markdown]
+¿Qué tripleta declara el dominio de `ex\:teaches`?
+{
+= `ex\:teaches rdfs\:domain ex\:Teacher` # Correcto. La propiedad es el sujeto y la clase de sus sujetos es el objeto.
+~ `ex\:Teacher rdfs\:domain ex\:teaches` # Incorrecto. Invierte propiedad y clase.
+~ `ex\:teaches rdfs\:range ex\:Teacher` # Incorrecto. Teacher se asocia al dominio en el enunciado.
+~ `ex\:teaches rdfs\:subClassOf ex\:Teacher` # Incorrecto. No es una jerarquía de clases.
+}
+
+::R1nC 3-RDFS tripleta L2::
+[markdown]
+¿Qué tripleta declara el rango de `ex\:teaches` cuando las asignaturas actúan como objetos?
+{
+= `ex\:teaches rdfs\:range ex\:Course` # Correcto. El rango se asocia a la clase que desempeña el papel de objeto.
+~ `ex\:Course rdfs\:range ex\:teaches` # Incorrecto. Invierte el papel de propiedad y clase.
+~ `ex\:teaches rdfs\:domain ex\:Course` # Incorrecto. El dominio corresponde al sujeto.
+~ `ex\:Course rdf\:type ex\:teaches` # Incorrecto. No declara el rango de una propiedad.
+}
+
+::v6Gq 3-RDFS tripleta L2::
+[markdown]
+¿Qué tripleta organiza `ex\:coordinates` como una propiedad más específica que `ex\:worksWith`?
+{
+= `ex\:coordinates rdfs\:subPropertyOf ex\:worksWith` # Correcto. rdfs\:subPropertyOf relaciona propiedades específica y general.
+~ `ex\:coordinates rdfs\:subClassOf ex\:worksWith` # Incorrecto. Esa propiedad organiza clases.
+~ `ex\:worksWith rdfs\:subPropertyOf ex\:coordinates` # Incorrecto. Invierte la especialización indicada.
+~ `ex\:coordinates rdf\:type ex\:worksWith` # Incorrecto. No declara una jerarquía de propiedades.
+}
+
+::B5tL 3-RDFS tripleta L2::
+[markdown]
+Observa el minigrafo. ¿Qué tripleta documenta la propiedad con un nombre legible?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-tripleta-L2-10-auto/B5tL.svg" alt="Documentación de una propiedad"><br>
+{
+= `ex\:enrolledIn rdfs\:label "enrolled in"@en` # Correcto. La arista de etiqueta conecta la propiedad con un literal textual.
+~ `ex\:enrolledIn rdfs\:label ex\:Course` # Incorrecto. La etiqueta mostrada no apunta a una clase.
+~ `ex\:Course rdfs\:label ex\:enrolledIn` # Incorrecto. Invierte los recursos del grafo.
+~ `ex\:enrolledIn rdfs\:range "enrolled in"@en` # Incorrecto. El rango se declara con una clase y no con la etiqueta.
+}
+
+::F9eK 3-RDFS tripleta L2::
+[markdown]
+¿Cuál es una tripleta de datos y no una declaración de esquema?
+{
+= `ex\:ana ex\:enrolledIn ex\:courseAI` # Correcto. Relaciona dos recursos concretos mediante una propiedad del vocabulario.
+~ `ex\:Student rdfs\:subClassOf ex\:Person` # Incorrecto. Es una jerarquía de clases del esquema.
+~ `ex\:enrolledIn rdfs\:domain ex\:Student` # Incorrecto. Es una declaración de dominio.
+~ `ex\:enrolledIn rdfs\:label "enrolled in"@en` # Incorrecto. Es documentación de la propiedad.
+}
+
+::m3HD 3-RDFS tripleta L2::
+[markdown]
+¿Qué tripleta añade una explicación textual a la clase `ex\:Course`?
+{
+= `ex\:Course rdfs\:comment "A unit of study"@en` # Correcto. rdfs\:comment documenta con una explicación textual.
+~ `ex\:Course rdfs\:domain "A unit of study"@en` # Incorrecto. El dominio se declara sobre propiedades y apunta a clases.
+~ `ex\:Course rdf\:type "A unit of study"@en` # Incorrecto. rdf\:type no usa un texto explicativo como clase.
+~ `"A unit of study"@en rdfs\:comment ex\:Course` # Incorrecto. Invierte sujeto y objeto de la documentación.
+}
+
+::Q7bX 3-RDFS tripleta L2::
+[markdown]
+¿Qué combinación forma un esquema básico coherente para una propiedad de matrícula?
+{
+= `ex\:enrolledIn rdfs\:domain ex\:Student` y `ex\:enrolledIn rdfs\:range ex\:Course` # Correcto. Ambas tripletas describen los papeles de sujeto y objeto de la propiedad.
+~ `ex\:Student rdfs\:domain ex\:enrolledIn` y `ex\:Course rdfs\:range ex\:enrolledIn` # Incorrecto. Las clases no son sujetos de las declaraciones de dominio y rango.
+~ `ex\:enrolledIn rdfs\:subClassOf ex\:Student` y `ex\:Course rdf\:type ex\:enrolledIn` # Incorrecto. Mezcla clases y propiedades.
+~ `ex\:Student rdfs\:label ex\:enrolledIn` y `ex\:Course rdfs\:comment ex\:enrolledIn` # Incorrecto. No declara los papeles de la propiedad.
+}

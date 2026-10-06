@@ -1,0 +1,1 @@
+digraph G { graph [rankdir=LR,bgcolor="transparent"]; author [label="ex:authorOf",shape=ellipse]; researcher [label="ex:Researcher"]; publication [label="ex:Publication"]; author->researcher[label="rdfs:domain"]; author->publication[label="rdfs:range"]; }

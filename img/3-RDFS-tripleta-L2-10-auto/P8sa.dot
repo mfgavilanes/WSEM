@@ -1,0 +1,1 @@
+digraph G { ta->student[label="rdfs:subClassOf"]; }

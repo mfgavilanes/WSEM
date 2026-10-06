@@ -1,0 +1,8 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.55", ranksep="0.7"];
+  node [shape=ellipse, style="filled", fillcolor="#FFF4D6", color="#B7791F", fontname="Arial"];
+  edge [color="#4B5563", fontname="Arial", fontsize=11];
+  Coordinates [label="ex:coordinates"]; Supervises [label="ex:supervises"]; WorksWith [label="ex:worksWith"];
+  Coordinates -> Supervises [label="rdfs:subPropertyOf"];
+  Supervises -> WorksWith [label="rdfs:subPropertyOf"];
+}

@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="160" viewBox="0 0 900 160" role="img" aria-labelledby="title desc">
+  <title id="title">Jerarquía de propiedades RDFS</title><desc id="desc">Coordinates es subpropiedad de supervises y supervises es subpropiedad de worksWith.</desc>
+  <defs><marker id="a" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M 0 0 L 10 5 L 0 10 z" fill="#4B5563"/></marker></defs>
+  <g font-family="Arial, sans-serif" font-size="16" fill="#172033" stroke="#4B5563" stroke-width="1.8">
+    <ellipse cx="130" cy="83" rx="106" ry="30" fill="#FFF4D6" stroke="#B7791F"/><text x="130" y="89" text-anchor="middle" stroke="none">ex:coordinates</text>
+    <ellipse cx="442" cy="83" rx="100" ry="30" fill="#FFF4D6" stroke="#B7791F"/><text x="442" y="89" text-anchor="middle" stroke="none">ex:supervises</text>
+    <ellipse cx="756" cy="83" rx="99" ry="30" fill="#FFF4D6" stroke="#B7791F"/><text x="756" y="89" text-anchor="middle" stroke="none">ex:worksWith</text>
+    <path d="M236 83 H342" fill="none" marker-end="url(#a)"/><text x="289" y="66" text-anchor="middle" stroke="none" font-size="13">rdfs:subPropertyOf</text>
+    <path d="M542 83 H657" fill="none" marker-end="url(#a)"/><text x="599" y="66" text-anchor="middle" stroke="none" font-size="13">rdfs:subPropertyOf</text>
+  </g>
+</svg>

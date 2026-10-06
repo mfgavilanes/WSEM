@@ -1,0 +1,10 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.45", ranksep="0.65"];
+  node [shape=box, style="rounded,filled", fillcolor="#EAF3FF", color="#316A9B", fontname="Arial"];
+  edge [color="#4B5563", fontname="Arial", fontsize=11];
+  Ana [label="ex:ana"]; Student [label="ex:Student"]; Person [label="ex:Person"]; Course [label="ex:Course1"]; Enrolled [label="ex:enrolledIn", shape=ellipse, fillcolor="#FFF4D6", color="#B7791F"];
+  Ana -> Student [label="rdf:type"];
+  Student -> Person [label="rdfs:subClassOf"];
+  Ana -> Course [label="ex:enrolledIn"];
+  Enrolled -> Student [label="rdfs:domain"];
+}

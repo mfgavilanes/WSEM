@@ -1,0 +1,133 @@
+::r8Qm 3-RDFS fill L2::
+[markdown]
+Completa la declaración para indicar que `ex\:Student` es una clase
+```turtle
+  ex\:Student rdf\:type ______ .
+```
+{
+= `rdfs\:Class` # Correcto. El objeto `rdfs\:Class` declara explícitamente la clase.
+~ `rdf\:Property` # Incorrecto. Ese recurso se usaría para declarar una propiedad.
+~ `rdfs\:label` # Incorrecto. Es una propiedad de documentación y no una clase.
+~ `rdfs\:subClassOf` # Incorrecto. Es una propiedad para construir jerarquías.
+}
+
+::C4yv 3-RDFS fill L2::
+[markdown]
+Completa la declaración para indicar que los estudiantes son un tipo de persona
+```turtle
+  ex\:Student ______ ex\:Person .
+```
+{
+= `rdfs\:subClassOf` # Correcto. La relación organiza `ex\:Student` bajo la clase más general `ex\:Person`.
+~ `rdfs\:subPropertyOf` # Incorrecto. Esa propiedad organiza propiedades, no clases.
+~ `rdfs\:domain` # Incorrecto. El dominio se declara sobre una propiedad.
+~ `rdf\:type` # Incorrecto. rdf\:type expresa pertenencia de una instancia a una clase.
+}
+
+::m6TB 3-RDFS fill L2::
+[markdown]
+Completa el esquema para indicar que `ex\:teaches` se usa con docentes como sujetos
+```turtle
+  ex\:teaches ______ ex\:Teacher .
+```
+{
+= `rdfs\:domain` # Correcto. El dominio asocia la propiedad con la clase esperada en el papel de sujeto.
+~ `rdfs\:range` # Incorrecto. El rango se asocia al papel del objeto.
+~ `rdfs\:label` # Incorrecto. Una etiqueta debe tener normalmente un literal como objeto.
+~ `rdfs\:subClassOf` # Incorrecto. Esta propiedad relaciona clases.
+}
+
+::V9kP 3-RDFS fill L2::
+[markdown]
+Completa el esquema para indicar que `ex\:teaches` se usa con asignaturas como objetos
+```turtle
+  ex\:teaches ______ ex\:Course .
+```
+{
+= `rdfs\:range` # Correcto. El rango asocia la propiedad con la clase esperada en el papel de objeto.
+~ `rdfs\:domain` # Incorrecto. El dominio se refiere al sujeto.
+~ `rdfs\:comment` # Incorrecto. Un comentario debe documentar el recurso con un literal.
+~ `rdfs\:subPropertyOf` # Incorrecto. Esta propiedad organiza propiedades.
+}
+
+::h2LN 3-RDFS fill L2::
+[markdown]
+Observa el minigrafo y completa la tripleta que falta para documentar la propiedad.<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-fill-L2-10-auto/h2LN.svg" alt="Propiedad RDFS con dominio y rango"><br>
+```turtle
+  ex\:teaches ______ "teaches"@en .
+```
+{
+= `rdfs\:label` # Correcto. El literal con etiqueta de idioma proporciona un nombre legible para la propiedad.
+~ `rdfs\:domain` # Incorrecto. El dominio debe tener una clase como objeto.
+~ `rdfs\:range` # Incorrecto. El rango debe tener una clase como objeto.
+~ `rdfs\:subPropertyOf` # Incorrecto. Una superpropiedad debe ser un recurso que representa una propiedad.
+}
+
+::F7qa 3-RDFS fill L2::
+[markdown]
+Completa el código para localizar las clases declaradas explícitamente en un modelo Jena
+```java
+  ResIterator it = model.listResourcesWithProperty(______, RDFS.Class);
+```
+{
+= `RDF.type` # Correcto. Las clases se localizan mediante el patrón `rdf\:type rdfs\:Class`.
+~ `RDFS.label` # Incorrecto. Una etiqueta no identifica necesariamente una clase.
+~ `RDFS.domain` # Incorrecto. El dominio se declara para propiedades.
+~ `RDFS.subClassOf` # Incorrecto. Esta propiedad busca relaciones jerárquicas entre clases.
+}
+
+::z5DW 3-RDFS fill L2::
+[markdown]
+Completa la declaración para indicar que `ex\:coordinates` es una versión específica de `ex\:worksWith`
+```turtle
+  ex\:coordinates ______ ex\:worksWith .
+```
+{
+= `rdfs\:subPropertyOf` # Correcto. La declaración organiza una propiedad específica bajo otra más general.
+~ `rdfs\:subClassOf` # Incorrecto. Esa relación se utiliza entre clases.
+~ `rdfs\:range` # Incorrecto. El rango se asocia a una clase de objetos.
+~ `rdf\:type` # Incorrecto. rdf\:type no establece una jerarquía de propiedades.
+}
+
+::P3Xe 3-RDFS fill L2::
+[markdown]
+Completa la tripleta para añadir una explicación de la clase
+```turtle
+  ex\:Course ______ "A unit of study"@en .
+```
+{
+= `rdfs\:comment` # Correcto. Un comentario proporciona documentación descriptiva sobre el recurso.
+~ `rdfs\:label` # Incorrecto. Una etiqueta puede ser breve, pero el objetivo planteado es una explicación documental.
+~ `rdfs\:domain` # Incorrecto. El dominio se declara sobre propiedades y apunta a una clase.
+~ `rdf\:type` # Incorrecto. rdf\:type no usa un texto explicativo como objeto.
+}
+
+::a1RG 3-RDFS fill L2::
+[markdown]
+Completa el código para combinar el esquema y los datos en el modelo `completeGraph`
+```java
+  Model completeGraph = ModelFactory.createDefaultModel();
+  completeGraph.add(schemaModel);
+  completeGraph.______(dataModel);
+```
+{
+= `add` # Correcto. El método añade al modelo combinado las tripletas explícitas del modelo de datos.
+~ `createResource` # Incorrecto. Ese método crea un recurso y no combina modelos.
+~ `createProperty` # Incorrecto. Ese método crea una propiedad y no añade un modelo.
+~ `listStatements` # Incorrecto. Ese método recorre afirmaciones y no incorpora tripletas.
+}
+
+::N8cf 3-RDFS fill L2::
+[markdown]
+Observa el minigrafo y completa la declaración que falta para expresar la jerarquía de clases.<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-fill-L2-10-auto/N8cf.svg" alt="Jerarquía simple de clases RDFS"><br>
+```turtle
+  ex\:TeachingAssistant ______ ex\:Student .
+```
+{
+= `rdfs\:subClassOf` # Correcto. La clase de ayudante de docencia se declara como una clase más específica que estudiante.
+~ `rdfs\:subPropertyOf` # Incorrecto. La figura muestra clases y no propiedades.
+~ `rdfs\:domain` # Incorrecto. Dominio se declara sobre propiedades.
+~ `rdfs\:label` # Incorrecto. Una etiqueta debería tener un literal como objeto.
+}

@@ -1,0 +1,1 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="720" height="170" viewBox="0 0 720 170"><text x="40" y="45" font-family="Arial" font-size="18">ex:ana —rdf:type→ ex:Student</text><text x="40" y="90" font-family="Arial" font-size="18">ex:ana —ex:enrolledIn→ ex:courseAI</text><text x="40" y="135" font-family="Arial" font-size="18">ex:enrolledIn —rdf:type→ rdf:Property</text></svg>

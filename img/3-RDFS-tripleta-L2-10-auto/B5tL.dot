@@ -1,0 +1,1 @@
+digraph G { enrolled->label[label="rdfs:label"]; }

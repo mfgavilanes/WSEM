@@ -1,0 +1,101 @@
+::x7PL 3-RDFS graph L3::
+[markdown]
+Observa el grafo. ¿Qué combinación distingue correctamente jerarquía, dominio y dato explícito?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-graph-L3-10-auto/x7PL.svg" alt="Esquema y datos RDFS"><br>
+{
+= `ex\:TeachingAssistant` se organiza bajo `ex\:Student`, `ex\:advises` tiene dominio `ex\:Professor` y la relación entre María y Ana es un dato. # Correcto. El grafo reúne una jerarquía de clases, una declaración de propiedad y una afirmación concreta.
+~ María es una subclase de Ana y `ex\:Professor` es una etiqueta. # Incorrecto. María y Ana son recursos concretos, mientras que Professor es una clase.
+~ `ex\:advises` es una subclase de `ex\:Professor`. # Incorrecto. Advises es una propiedad y Professor aparece como su dominio.
+~ Todas las aristas representan documentación textual. # Incorrecto. El grafo contiene relaciones semánticas y un dato, no solo anotaciones.
+}
+
+::B4nc 3-RDFS graph L3::
+[markdown]
+En el mismo grafo, ¿qué tripletas pertenecen al esquema y no describen una persona concreta?
+{
+= La jerarquía de clases y las declaraciones de dominio y rango de `ex\:advises`. # Correcto. Esas tripletas definen vocabulario y significado reutilizable.
+~ La afirmación `ex\:maria ex\:advises ex\:ana`. # Incorrecto. Es un dato sobre recursos concretos.
+~ Solo los nombres de los recursos concretos María y Ana. # Incorrecto. Los recursos concretos pertenecen a los datos.
+~ La arista de etiqueta de Ana. # Incorrecto. El grafo no usa una etiqueta de Ana como parte central del esquema.
+}
+
+::R9fs 3-RDFS graph L3::
+[markdown]
+Observa el grafo. ¿Qué descripción integra correctamente propiedad general, propiedad específica, dominio y rango?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-graph-L3-10-auto/R9fs.svg" alt="Jerarquía de propiedades RDFS"><br>
+{
+= `ex\:coordinates` es más específica que `ex\:worksWith`, y esta última relaciona los papeles de profesor y proyecto. # Correcto. El grafo combina una jerarquía de propiedades con dominio y rango de la propiedad general.
+~ `ex\:Professor` es una subpropiedad de `ex\:Project`. # Incorrecto. Ambos recursos representan clases en las declaraciones de dominio y rango.
+~ `ex\:worksWith` es una subclase de `ex\:coordinates`. # Incorrecto. La relación mostrada es entre propiedades.
+~ El rango obliga a que cada profesor coordine un único proyecto. # Incorrecto. El grafo no declara cardinalidades.
+}
+
+::m2Zq 3-RDFS graph L3::
+[markdown]
+¿Cuál es la lectura correcta de un grafo que contiene `ex\:Course rdf\:type rdfs\:Class`, `ex\:courseAI rdf\:type ex\:Course` y una etiqueta para `ex\:Course`?
+{
+= `ex\:Course` es un término de vocabulario documentado y `ex\:courseAI` es un recurso concreto de los datos. # Correcto. La declaración de clase y su etiqueta pertenecen al esquema, mientras que el curso concreto aparece como instancia.
+~ Ambos recursos son etiquetas textuales. # Incorrecto. Son recursos identificados mediante IRI.
+~ `ex\:courseAI` declara la clase `ex\:Course`. # Incorrecto. La declaración explícita de clase tiene como sujeto `ex\:Course`.
+~ La etiqueta convierte `ex\:courseAI` en una propiedad. # Incorrecto. Documentar una clase no altera los datos concretos.
+}
+
+::K5aH 3-RDFS graph L3::
+[markdown]
+Un minigrafo incluye una propiedad con dominio `ex\:Student`, rango `ex\:Course`, etiqueta en español y comentario en inglés. ¿Qué información puede presentarse directamente en una interfaz sin realizar inferencia?
+{
+= El nombre multilingüe de la propiedad, su explicación y los papeles de estudiante y asignatura declarados para ella. # Correcto. Todas esas piezas aparecen explícitamente en el esquema.
+~ La lista completa de estudiantes matriculados. # Incorrecto. Serían necesarios datos concretos que el enunciado no aporta.
+~ La identidad de todos los recursos que son cursos. # Incorrecto. No se han proporcionado instancias concretas.
+~ Una restricción que rechace matrículas incorrectas. # Incorrecto. Dominio y rango no realizan validación cerrada.
+}
+
+::d8Vw 3-RDFS graph L3::
+[markdown]
+¿Qué recorrido directo permite construir una tabla de propiedades y sus superpropiedades a partir de un minigrafo RDFS?
+{
+= Recorrer las aristas etiquetadas `rdfs\:subPropertyOf`, usando origen y destino como propiedad específica y general. # Correcto. Ese predicado expresa explícitamente la jerarquía entre propiedades.
+~ Recorrer las aristas `rdf\:type` para obtener los dominios. # Incorrecto. rdf\:type clasifica recursos y no declara superpropiedades.
+~ Recorrer las etiquetas para obtener las subclases. # Incorrecto. Las etiquetas documentan y no organizan jerarquías.
+~ Recorrer los rangos para obtener comentarios. # Incorrecto. Rango y comentario son declaraciones distintas.
+}
+
+::F1re 3-RDFS graph L3::
+[markdown]
+¿Cuál es una interpretación correcta de un grafo con `ex\:Lab rdfs\:subClassOf ex\:LearningActivity` y `ex\:Lecture rdfs\:subClassOf ex\:LearningActivity`?
+{
+= El esquema organiza dos clases específicas bajo la misma clase general. # Correcto. Las dos declaraciones comparten como objeto `ex\:LearningActivity`.
+~ Lecture es una subpropiedad de Lab. # Incorrecto. El grafo usa jerarquías de clases.
+~ LearningActivity es una instancia de las otras dos clases. # Incorrecto. Las aristas declaran relaciones entre clases.
+~ Las tres IRIs son literales multilingües. # Incorrecto. Representan recursos del vocabulario.
+}
+
+::q3Ns 3-RDFS graph L3::
+[markdown]
+¿Qué error tendría una lectura que afirma que la ausencia de una arista `rdfs\:label` hacia una clase demuestra que esa clase no puede usarse en el grafo?
+{
+= Confunde documentación opcional con la existencia y el uso semántico de una clase. # Correcto. Una clase puede estar declarada y usarse aunque no disponga de etiqueta explícita.
+~ Confunde un rango con una subpropiedad. # Incorrecto. El error descrito se refiere a documentación.
+~ Confunde datos con archivos RDF/XML. # Incorrecto. La serialización no es relevante para esa conclusión.
+~ Confunde una instancia con un literal. # Incorrecto. La cuestión trata de clases y etiquetas.
+}
+
+::W6tB 3-RDFS graph L3::
+[markdown]
+En un grafo combinado, ¿por qué conviene mantener tanto los recursos de esquema como los datos concretos?
+{
+= Porque permite interpretar los hechos concretos con las clases, propiedades y documentación que definen el vocabulario. # Correcto. El esquema aporta el significado general de los términos usados en los datos.
+~ Porque elimina la necesidad de usar IRIs en los datos. # Incorrecto. Las IRIs siguen identificando los recursos.
+~ Porque transforma todos los datos en comentarios. # Incorrecto. Datos y documentación mantienen papeles distintos.
+~ Porque valida automáticamente cada tripleta. # Incorrecto. Un grafo RDFS combinado no activa validación cerrada por sí mismo.
+}
+
+::E7cM 3-RDFS graph L3::
+[markdown]
+¿Qué conjunto de elementos permite reconstruir directamente la documentación y la estructura de una propiedad en un grafo?
+{
+= Sus aristas `rdfs\:label`, `rdfs\:comment`, `rdfs\:domain`, `rdfs\:range` y, cuando exista, `rdfs\:subPropertyOf`. # Correcto. Esas declaraciones describen nombre, documentación, papeles y jerarquía de una propiedad.
+~ Solo las instancias que utilizan la propiedad. # Incorrecto. Las instancias no sustituyen sus declaraciones de esquema.
+~ Solo las etiquetas de las clases del modelo. # Incorrecto. No muestran dominios, rangos ni jerarquías de propiedades.
+~ La ausencia de aristas en el grafo. # Incorrecto. La estructura se expresa mediante las tripletas presentes.
+}

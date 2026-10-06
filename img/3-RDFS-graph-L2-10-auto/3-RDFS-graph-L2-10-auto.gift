@@ -1,0 +1,105 @@
+::G4qV 3-RDFS graph L2::
+[markdown]
+Observa el minigrafo. ¿Qué tripleta expresa la jerarquía de clases?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-graph-L2-10-auto/G4qV.svg" alt="Jerarquía de clases RDFS"><br>
+{
+= `ex\:Student rdfs\:subClassOf ex\:Person` # Correcto. La arista entre las dos clases lleva la etiqueta rdfs\:subClassOf.
+~ `ex\:ana rdf\:type ex\:Person` # Incorrecto. La arista rdf\:type llega a Student.
+~ `ex\:Person rdfs\:subClassOf ex\:Student` # Incorrecto. Invierte el sentido de la jerarquía mostrada.
+~ `ex\:Student rdfs\:range ex\:Person` # Incorrecto. La figura no declara una propiedad ni un rango.
+}
+
+::r8LT 3-RDFS graph L2::
+[markdown]
+En el grafo, ¿qué recursos forman parte del esquema?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-graph-L2-10-auto/r8LT.svg" alt="Datos y esquema RDFS"><br>
+{
+= `ex\:Student`, `ex\:Course` y `ex\:enrolledIn` # Correcto. Son términos generales de clase o propiedad usados para estructurar los datos.
+~ `ex\:ana`, `ex\:courseAI` y `ex\:enrolledIn` # Incorrecto. Ana y CourseAI son recursos concretos.
+~ `ex\:ana`, `ex\:Student` y `ex\:courseAI` # Incorrecto. Solo Student pertenece al esquema.
+~ `ex\:ana`, `ex\:courseAI` y `rdf\:type` # Incorrecto. Los dos recursos concretos no forman parte del vocabulario.
+}
+
+::M2xC 3-RDFS graph L2::
+[markdown]
+¿Qué afirma la arista `rdfs\:domain` del minigrafo?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-graph-L2-10-auto/M2xC.svg" alt="Dominio y rango RDFS"><br>
+{
+= Que `ex\:Teacher` es la clase asociada al sujeto de `ex\:teaches`. # Correcto. El dominio describe el papel del sujeto de una propiedad.
+~ Que `ex\:Teacher` es la clase asociada al objeto de `ex\:teaches`. # Incorrecto. Ese papel corresponde al rango.
+~ Que `ex\:Teacher` es una subpropiedad de `ex\:teaches`. # Incorrecto. Teacher es una clase.
+~ Que `ex\:Teacher` es una etiqueta textual. # Incorrecto. Es un recurso que representa una clase.
+}
+
+::n5BP 3-RDFS graph L2::
+[markdown]
+¿Qué tripleta representa el rango de la propiedad del minigrafo?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-graph-L2-10-auto/M2xC.svg" alt="Dominio y rango RDFS"><br>
+{
+= `ex\:teaches rdfs\:range ex\:Course` # Correcto. La arista de rango parte de la propiedad y llega a la clase Course.
+~ `ex\:Course rdfs\:range ex\:teaches` # Incorrecto. Invierte el papel de propiedad y clase.
+~ `ex\:teaches rdfs\:domain ex\:Course` # Incorrecto. Course aparece como rango en la figura.
+~ `ex\:Course rdfs\:subClassOf ex\:teaches` # Incorrecto. No hay una jerarquía de clases con la propiedad.
+}
+
+::H7zf 3-RDFS graph L2::
+[markdown]
+Observa el minigrafo. ¿Qué propiedad es más específica?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-graph-L2-10-auto/H7zf.svg" alt="Jerarquía de propiedades RDFS"><br>
+{
+= `ex\:supervises` # Correcto. Se conecta mediante rdfs\:subPropertyOf con la propiedad más general `ex\:worksWith`.
+~ `ex\:worksWith` # Incorrecto. Es la propiedad general de la relación mostrada.
+~ `ex\:Professor` # Incorrecto. Es una clase asociada al dominio, no una propiedad.
+~ `ex\:Project` # Incorrecto. Es una clase asociada al rango, no una propiedad.
+}
+
+::c9RD 3-RDFS graph L2::
+[markdown]
+En el minigrafo, ¿qué información documenta el vocabulario?<br>
+<img src="https://raw.githubusercontent.com/mfgavilanes/WSEM/main/img/3-RDFS-graph-L2-10-auto/c9RD.svg" alt="Documentación RDFS"><br>
+{
+= Las aristas `rdfs\:label` y `rdfs\:comment` asociadas a `ex\:enrolledIn`. # Correcto. Ambas tripletas describen legibilidad y documentación de la propiedad.
+~ La arista que relaciona Ana con CourseAI. # Incorrecto. Esa arista expresa un dato concreto.
+~ El nodo `ex\:ana` sin aristas. # Incorrecto. Es un recurso del dominio de datos.
+~ El nodo `ex\:courseAI` sin aristas. # Incorrecto. Es un recurso concreto y no documentación.
+}
+
+::P3ka 3-RDFS graph L2::
+[markdown]
+¿Qué patrón de tripletas representa una declaración explícita de clase como las del minigrafo `G4qV`?
+{
+= Un recurso con `rdf\:type` igual a `rdfs\:Class`. # Correcto. Esa forma declara explícitamente una clase en el esquema.
+~ Un recurso con `rdfs\:label` igual a `rdfs\:Class`. # Incorrecto. Una etiqueta no declara una clase.
+~ Un recurso con `rdfs\:domain` igual a `rdf\:type`. # Incorrecto. El dominio se declara sobre propiedades.
+~ Un recurso con `rdf\:type` igual a `rdf\:Property`. # Incorrecto. Ese patrón declara una propiedad.
+}
+
+::a6QJ 3-RDFS graph L2::
+[markdown]
+Si se combina el grafo del esquema con un grafo de datos, ¿qué afirmación es correcta?
+{
+= El modelo combinado permite recorrer las tripletas explícitas de ambos grafos. # Correcto. La combinación reúne datos y vocabulario sin activar por sí sola un razonador.
+~ El modelo combinado conserva únicamente las etiquetas. # Incorrecto. Conserva las tripletas que se añadan al modelo.
+~ El modelo combinado transforma las instancias en subclases. # Incorrecto. Combinar grafos no cambia el papel de los recursos.
+~ El modelo combinado elimina los datos que no tienen comentario. # Incorrecto. RDFS no elimina tripletas por falta de documentación.
+}
+
+::W1mu 3-RDFS graph L2::
+[markdown]
+En el grafo de documentación, ¿qué objeto tiene la tripleta con predicado `rdfs\:label`?
+{
+= El literal `"enrolled in"@en` # Correcto. Una etiqueta se representa mediante un literal asociado al recurso.
+~ La clase `ex\:Student` # Incorrecto. Student pertenece al modelo de clases y no es el objeto de la etiqueta.
+~ La propiedad `ex\:enrolledIn` # Incorrecto. Es el sujeto de la tripleta de etiqueta.
+~ El recurso `ex\:courseAI` # Incorrecto. Es un dato concreto y no aparece como etiqueta.
+}
+
+::E8sN 3-RDFS graph L2::
+[markdown]
+¿Por qué no es correcto interpretar la arista de rango del minigrafo como una regla que rechaza datos?
+{
+= Porque `rdfs\:range` aporta significado semántico y no valida ni elimina tripletas por sí solo. # Correcto. RDFS no constituye un mecanismo de validación cerrada.
+~ Porque el rango solo puede aplicarse a etiquetas. # Incorrecto. El rango se declara sobre propiedades.
+~ Porque las clases no pueden aparecer como objetos. # Incorrecto. Una clase es precisamente el objeto habitual de una declaración de rango.
+~ Porque el rango convierte la propiedad en una clase. # Incorrecto. La declaración no altera la naturaleza de la propiedad.
+}
