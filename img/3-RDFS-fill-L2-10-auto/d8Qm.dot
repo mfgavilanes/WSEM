@@ -1,0 +1,7 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.7"];
+  node [shape=rect, style="rounded,filled", fillcolor="#FFF3CD", color="#B7791F", fontname="Arial", fontsize=15, margin="0.16,0.10"];
+  student [label="ex:Student\n(clase)"];
+  person [label="ex:Person\n(clase)"];
+  student -> person [label="rdfs:subClassOf"];
+}

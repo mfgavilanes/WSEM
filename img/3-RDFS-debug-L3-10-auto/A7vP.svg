@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="285" viewBox="0 0 820 285" role="img" aria-labelledby="title desc">
+  <title id="title">Cadena inferida de Ana a Person</title>
+  <desc id="desc">Ana es TeachingAssistant, TeachingAssistant es subclase de Student y Student es subclase de Person. La última tripleta se consulta en el modelo inferido.</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 z" fill="#386FA4"/></marker></defs>
+  <text x="38" y="28" font-family="Arial" font-size="16" font-weight="bold" fill="#444">Grafo base</text>
+  <ellipse cx="125" cy="104" rx="72" ry="30" fill="#E7F0FA" stroke="#386FA4" stroke-width="2"/><text x="125" y="110" text-anchor="middle" font-family="Arial" font-size="18" fill="#183B5B">ex:Ana</text>
+  <rect x="270" y="69" width="180" height="70" rx="12" fill="#FFF3CD" stroke="#B7791F" stroke-width="2"/><text x="360" y="98" text-anchor="middle" font-family="Arial" font-size="17" fill="#704A00">TeachingAssistant</text><text x="360" y="120" text-anchor="middle" font-family="Arial" font-size="14" fill="#704A00">clase</text>
+  <rect x="518" y="69" width="125" height="70" rx="12" fill="#FFF3CD" stroke="#B7791F" stroke-width="2"/><text x="580" y="98" text-anchor="middle" font-family="Arial" font-size="18" fill="#704A00">Student</text><text x="580" y="120" text-anchor="middle" font-family="Arial" font-size="14" fill="#704A00">clase</text>
+  <rect x="680" y="69" width="105" height="70" rx="12" fill="#FFF3CD" stroke="#B7791F" stroke-width="2"/><text x="732" y="98" text-anchor="middle" font-family="Arial" font-size="18" fill="#704A00">Person</text><text x="732" y="120" text-anchor="middle" font-family="Arial" font-size="14" fill="#704A00">clase</text>
+  <line x1="198" y1="104" x2="268" y2="104" stroke="#386FA4" stroke-width="2.5" marker-end="url(#a)"/><text x="232" y="91" text-anchor="middle" font-family="Arial" font-size="14" fill="#183B5B">rdf:type</text>
+  <line x1="452" y1="104" x2="516" y2="104" stroke="#B7791F" stroke-width="2.5" marker-end="url(#a)"/><text x="484" y="55" text-anchor="middle" font-family="Arial" font-size="13" fill="#704A00">rdfs:subClassOf</text>
+  <line x1="645" y1="104" x2="678" y2="104" stroke="#B7791F" stroke-width="2.5" marker-end="url(#a)"/><text x="661" y="55" text-anchor="middle" font-family="Arial" font-size="13" fill="#704A00">rdfs:subClassOf</text>
+  <line x1="30" y1="168" x2="790" y2="168" stroke="#C9CED6" stroke-width="1.5"/>
+  <text x="38" y="202" font-family="Arial" font-size="16" font-weight="bold" fill="#444">Modelo inferido</text>
+  <text x="410" y="238" text-anchor="middle" font-family="Arial" font-size="18" fill="#23552B">ex:Ana rdf:type ex:Person</text>
+  <text x="410" y="262" text-anchor="middle" font-family="Arial" font-size="14" fill="#444">Consecuencia: no está necesariamente escrita en el grafo base</text>
+</svg>
