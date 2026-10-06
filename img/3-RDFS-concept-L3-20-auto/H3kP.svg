@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="780" height="255" viewBox="0 0 780 255" role="img" aria-labelledby="title desc">
+  <title id="title">Cadena RDFS de clases e instancia</title>
+  <desc id="desc">TeachingAssistant es subclase de Student, Student es subclase de Person y Ana es de tipo TeachingAssistant.</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 z" fill="#9B6A13"/></marker></defs>
+  <rect x="48" y="34" width="185" height="72" rx="12" fill="#FFF3CD" stroke="#B7791F" stroke-width="2"/>
+  <text x="140" y="65" text-anchor="middle" font-family="Arial" font-size="17" fill="#704A00">ex:TeachingAssistant</text><text x="140" y="88" text-anchor="middle" font-family="Arial" font-size="14" fill="#704A00">clase</text>
+  <rect x="300" y="34" width="145" height="72" rx="12" fill="#FFF3CD" stroke="#B7791F" stroke-width="2"/>
+  <text x="372" y="65" text-anchor="middle" font-family="Arial" font-size="18" fill="#704A00">ex:Student</text><text x="372" y="88" text-anchor="middle" font-family="Arial" font-size="14" fill="#704A00">clase</text>
+  <rect x="540" y="34" width="145" height="72" rx="12" fill="#FFF3CD" stroke="#B7791F" stroke-width="2"/>
+  <text x="612" y="65" text-anchor="middle" font-family="Arial" font-size="18" fill="#704A00">ex:Person</text><text x="612" y="88" text-anchor="middle" font-family="Arial" font-size="14" fill="#704A00">clase</text>
+  <line x1="234" y1="70" x2="298" y2="70" stroke="#B7791F" stroke-width="2.5" marker-end="url(#a)"/><text x="266" y="23" text-anchor="middle" font-family="Arial" font-size="14" fill="#704A00">rdfs:subClassOf</text>
+  <line x1="446" y1="70" x2="538" y2="70" stroke="#B7791F" stroke-width="2.5" marker-end="url(#a)"/><text x="492" y="23" text-anchor="middle" font-family="Arial" font-size="14" fill="#704A00">rdfs:subClassOf</text>
+  <ellipse cx="140" cy="200" rx="90" ry="35" fill="#E7F0FA" stroke="#386FA4" stroke-width="2"/><text x="140" y="205" text-anchor="middle" font-family="Arial" font-size="18" fill="#183B5B">ex:Ana</text>
+  <line x1="140" y1="164" x2="140" y2="108" stroke="#386FA4" stroke-width="2.5" marker-end="url(#a)"/><text x="190" y="142" font-family="Arial" font-size="15" fill="#183B5B">rdf:type</text>
+  <text x="390" y="232" text-anchor="middle" font-family="Arial" font-size="15" fill="#444">Tipos inferidos para Ana: Student y Person</text>
+</svg>

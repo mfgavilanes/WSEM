@@ -1,0 +1,4 @@
+flowchart LR
+    Ana(["ex:Ana"]) -->|rdf:type| TA["ex:TeachingAssistant<br/>(clase)"]
+    TA -->|rdfs:subClassOf| Student["ex:Student<br/>(clase)"]
+    Student -->|rdfs:subClassOf| Person["ex:Person<br/>(clase)"]

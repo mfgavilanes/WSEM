@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="285" viewBox="0 0 820 285" role="img" aria-labelledby="title desc">
+  <title id="title">Cadena RDFS desde dominio a superclase</title>
+  <desc id="desc">La propiedad enrolledIn tiene dominio Student, Student es subclase de Person y x usa enrolledIn con c.</desc>
+  <defs><marker id="a" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 z" fill="#386FA4"/></marker></defs>
+  <text x="34" y="29" font-family="Arial" font-size="16" font-weight="bold" fill="#444">Esquema</text>
+  <rect x="54" y="50" width="178" height="68" rx="12" fill="#E8F5E9" stroke="#3A7D44" stroke-width="2"/>
+  <text x="143" y="79" text-anchor="middle" font-family="Arial" font-size="17" fill="#23552B">ex:enrolledIn</text><text x="143" y="102" text-anchor="middle" font-family="Arial" font-size="14" fill="#23552B">propiedad</text>
+  <rect x="340" y="50" width="145" height="68" rx="12" fill="#FFF3CD" stroke="#B7791F" stroke-width="2"/>
+  <text x="412" y="79" text-anchor="middle" font-family="Arial" font-size="18" fill="#704A00">ex:Student</text><text x="412" y="102" text-anchor="middle" font-family="Arial" font-size="14" fill="#704A00">clase</text>
+  <rect x="625" y="50" width="145" height="68" rx="12" fill="#FFF3CD" stroke="#B7791F" stroke-width="2"/>
+  <text x="697" y="79" text-anchor="middle" font-family="Arial" font-size="18" fill="#704A00">ex:Person</text><text x="697" y="102" text-anchor="middle" font-family="Arial" font-size="14" fill="#704A00">clase</text>
+  <line x1="234" y1="84" x2="338" y2="84" stroke="#386FA4" stroke-width="2.5" marker-end="url(#a)"/><text x="286" y="69" text-anchor="middle" font-family="Arial" font-size="15" fill="#183B5B">rdfs:domain</text>
+  <line x1="486" y1="84" x2="623" y2="84" stroke="#B7791F" stroke-width="2.5" marker-end="url(#a)"/><text x="554" y="69" text-anchor="middle" font-family="Arial" font-size="15" fill="#704A00">rdfs:subClassOf</text>
+  <line x1="32" y1="153" x2="788" y2="153" stroke="#C9CED6" stroke-width="1.5"/>
+  <text x="34" y="184" font-family="Arial" font-size="16" font-weight="bold" fill="#444">Dato</text>
+  <ellipse cx="148" cy="225" rx="54" ry="29" fill="#E7F0FA" stroke="#386FA4" stroke-width="2"/><text x="148" y="231" text-anchor="middle" font-family="Arial" font-size="18" fill="#183B5B">ex:x</text>
+  <ellipse cx="670" cy="225" rx="54" ry="29" fill="#E7F0FA" stroke="#386FA4" stroke-width="2"/><text x="670" y="231" text-anchor="middle" font-family="Arial" font-size="18" fill="#183B5B">ex:c</text>
+  <line x1="203" y1="225" x2="614" y2="225" stroke="#386FA4" stroke-width="2.5" marker-end="url(#a)"/><text x="409" y="211" text-anchor="middle" font-family="Arial" font-size="17" fill="#183B5B">ex:enrolledIn</text>
+  <text x="410" y="270" text-anchor="middle" font-family="Arial" font-size="15" fill="#444">Para ex:x se infieren los tipos Student y Person</text>
+</svg>

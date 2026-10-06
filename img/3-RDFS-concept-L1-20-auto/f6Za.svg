@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="160" viewBox="0 0 600 160" role="img" aria-labelledby="title desc">
+  <title id="title">Grafo RDFS con rango</title><desc id="desc">La propiedad enrolledIn tiene Course como rango.</desc>
+  <defs><marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto"><path d="M0,0 L10,3.5 L0,7 z" fill="#386FA4"/></marker></defs>
+  <rect x="32" y="42" width="185" height="76" rx="12" fill="#E8F5E9" stroke="#3A7D44" stroke-width="2"/>
+  <text x="124" y="75" text-anchor="middle" font-family="Arial" font-size="19" fill="#23552B">ex:enrolledIn</text><text x="124" y="99" text-anchor="middle" font-family="Arial" font-size="15" fill="#23552B">propiedad</text>
+  <line x1="218" y1="80" x2="410" y2="80" stroke="#386FA4" stroke-width="2.5" marker-end="url(#arrow)"/>
+  <text x="314" y="65" text-anchor="middle" font-family="Arial" font-size="17" fill="#183B5B">rdfs:range</text>
+  <rect x="414" y="42" width="145" height="76" rx="12" fill="#FFF3CD" stroke="#B7791F" stroke-width="2"/>
+  <text x="486" y="75" text-anchor="middle" font-family="Arial" font-size="19" fill="#704A00">ex:Course</text><text x="486" y="99" text-anchor="middle" font-family="Arial" font-size="15" fill="#704A00">clase</text>
+</svg>

@@ -1,0 +1,8 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.7"];
+  node [shape=rect, style="rounded,filled", fillcolor="#EAF3FF", color="#386FA4", fontname="Arial", fontsize=15, margin="0.16,0.10"];
+  edge [color="#386FA4", fontname="Arial", fontsize=14, penwidth=1.5];
+  property [label="ex:enrolledIn\\n(propiedad)", fillcolor="#E8F5E9", color="#3A7D44"];
+  student [label="ex:Student\\n(clase)", fillcolor="#FFF3CD", color="#B7791F"];
+  property -> student [label="rdfs:domain"];
+}

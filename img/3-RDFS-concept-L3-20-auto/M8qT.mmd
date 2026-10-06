@@ -1,0 +1,4 @@
+flowchart TB
+    Property["ex:enrolledIn<br/>(propiedad)"] -->|rdfs:domain| Student["ex:Student<br/>(clase)"]
+    Student -->|rdfs:subClassOf| Person["ex:Person<br/>(clase)"]
+    X(["ex:x"]) -->|ex:enrolledIn| C(["ex:c"])

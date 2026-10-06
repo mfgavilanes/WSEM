@@ -1,0 +1,10 @@
+digraph G {
+  graph [rankdir=TB, bgcolor="transparent", pad="0.2", nodesep="0.8"];
+  node [shape=rect, style="rounded,filled", fontname="Arial", fontsize=15, margin="0.16,0.10"];
+  property [label="ex:enrolledIn\n(propiedad)", fillcolor="#FCE8E6", color="#B13D3D"];
+  course [label="ex:Course\n(clase)", fillcolor="#FFF3CD", color="#B7791F"];
+  ana [label="ex:Ana", shape=ellipse, fillcolor="#E7F0FA", color="#386FA4"];
+  c1 [label="ex:C1", shape=ellipse, fillcolor="#E7F0FA", color="#386FA4"];
+  property -> course [label="rdfs:domain (error)", color="#B13D3D"];
+  ana -> c1 [label="ex:enrolledIn", color="#386FA4"];
+}
