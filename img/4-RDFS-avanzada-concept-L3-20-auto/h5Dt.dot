@@ -1,0 +1,16 @@
+      digraph G {
+        graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.55", ranksep="0.8"];
+        node [fontname="Arial", style="rounded,filled", fillcolor="#EAF2F8", color="#1F618D", fontcolor="#17202A", margin="0.12,0.08"];
+        edge [fontname="Arial", color="#34495E", fontcolor="#17202A", arrowsize="0.75"];
+        s [label="ex:p1", shape=box];
+o [label="ex:reviewer1", shape=box];
+p [label="ex:evaluatedBy", shape=ellipse];
+p0 [label="ex:linkedTo", shape=ellipse];
+r [label="ex:Resource", shape=ellipse];
+c0 [label="ex:Reviewer", shape=ellipse];
+u0 [label="ex:Person", shape=ellipse];
+        s -> o [label="ex:evaluatedBy"];
+p -> p0 [label="rdfs:subPropertyOf"];
+p0 -> r [label="rdfs:range"];
+c0 -> u0 [label="rdfs:subClassOf"];
+      }
