@@ -1,0 +1,13 @@
+flowchart LR
+  s["ex:sam"]
+  l["ex:lab1"]
+  i["ex:internsIn"]
+  p["ex:participatesIn"]
+  in["ex:Intern"]
+  st["ex:Student"]
+  pe["ex:Person"]
+  s -->|"ex:internsIn"| l
+  i -->|"rdfs:subPropertyOf"| p
+  p -->|"rdfs:domain"| pe
+  in -->|"rdfs:subClassOf"| st
+  st -->|"rdfs:subClassOf"| pe

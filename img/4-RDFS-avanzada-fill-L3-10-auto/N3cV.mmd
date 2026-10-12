@@ -1,0 +1,11 @@
+flowchart LR
+  t["ex:task1"]
+  s["ex:sofia"]
+  a["ex:assignedTo"]
+  r["ex:ResearchAssistant"]
+  st["ex:Student"]
+  p["ex:Person"]
+  t -->|"ex:assignedTo"| s
+  a -->|"rdfs:range"| r
+  r -->|"rdfs:subClassOf"| st
+  st -->|"rdfs:subClassOf"| p

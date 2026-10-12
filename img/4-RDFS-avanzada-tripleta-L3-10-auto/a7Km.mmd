@@ -1,0 +1,9 @@
+flowchart LR
+  a["ex:ai"]
+  m["ex:marta"]
+  t["ex:teaches"]
+  pr["ex:Professor"]
+  p["ex:Person"]
+  a -->|"ex:teaches"| m
+  t -->|"rdfs:domain"| pr
+  pr -->|"rdfs:subClassOf"| p

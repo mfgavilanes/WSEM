@@ -1,0 +1,9 @@
+flowchart LR
+  n["ex:nora"]
+  ia["ex:ia"]
+  d["ex:directs"]
+  t["ex:teaches"]
+  p["ex:participatesInCourse"]
+  n -->|"ex:directs"| ia
+  d -->|"rdfs:subPropertyOf"| t
+  t -->|"rdfs:subPropertyOf"| p

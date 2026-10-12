@@ -1,0 +1,13 @@
+    digraph G {
+      graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.55", ranksep="0.8"];
+      node [fontname="Arial", style="rounded,filled", fillcolor="#EAF2F8", color="#1F618D", fontcolor="#17202A", margin="0.12,0.08"];
+      edge [fontname="Arial", color="#34495E", fontcolor="#17202A", arrowsize="0.75"];
+      p [label="ex:prof1", shape=box];
+s [label="ex:stu1", shape=box];
+su [label="ex:supervises", shape=ellipse];
+pr [label="ex:Professor", shape=ellipse];
+st [label="ex:Student", shape=ellipse];
+      p -> s [label="ex:supervises"];
+su -> pr [label="rdfs:domain"];
+su -> st [label="rdfs:range"];
+    }

@@ -1,0 +1,12 @@
+flowchart LR
+  s["ex:study1"]
+  d["ex:data1"]
+  rt["ex:relatedTo"]
+  da["ex:Dataset"]
+  pr["ex:PublicResource"]
+  re["ex:Resource"]
+  s -->|"ex:relatedTo"| d
+  rt -->|"rdfs:range"| da
+  rt -->|"rdfs:range"| pr
+  da -->|"rdfs:subClassOf"| re
+  pr -->|"rdfs:subClassOf"| re

@@ -1,0 +1,9 @@
+flowchart LR
+  m["ex:marta"]
+  l["ex:lab1"]
+  p["ex:memberOf"]
+  st["ex:Student"]
+  em["ex:Employee"]
+  m -->|"ex:memberOf"| l
+  p -->|"rdfs:domain"| st
+  p -->|"rdfs:domain"| em

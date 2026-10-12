@@ -1,0 +1,9 @@
+flowchart LR
+  p["ex:prof1"]
+  s["ex:stu1"]
+  su["ex:supervises"]
+  pr["ex:Professor"]
+  st["ex:Student"]
+  p -->|"ex:supervises"| s
+  su -->|"rdfs:domain"| pr
+  su -->|"rdfs:range"| st
