@@ -1,0 +1,11 @@
+flowchart LR
+  r["ex:resource1"]
+  x["ex:x"]
+  u["ex:uses"]
+  sb["ex:supervisedBy"]
+  st["ex:Student"]
+  pr["ex:Professor"]
+  r -->|"ex:uses"| x
+  u -->|"rdfs:domain"| st
+  x -->|"ex:supervisedBy"| r
+  sb -->|"rdfs:range"| pr

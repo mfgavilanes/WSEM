@@ -1,0 +1,12 @@
+    digraph G {
+      graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.55", ranksep="0.8"];
+      node [fontname="Arial", style="rounded,filled", fillcolor="#EAF2F8", color="#1F618D", fontcolor="#17202A", margin="0.12,0.08"];
+      edge [fontname="Arial", color="#34495E", fontcolor="#17202A", arrowsize="0.75"];
+      e [label="ex:eva", shape=box];
+ph [label="ex:PhDStudent", shape=ellipse];
+s [label="ex:Student", shape=ellipse];
+p [label="ex:Person", shape=ellipse];
+      e -> ph [label="rdf:type"];
+ph -> s [label="rdfs:subClassOf"];
+s -> p [label="rdfs:subClassOf"];
+    }
