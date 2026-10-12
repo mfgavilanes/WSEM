@@ -1,0 +1,17 @@
+    digraph G {
+      graph [rankdir=LR, bgcolor="transparent", pad="0.2", nodesep="0.55", ranksep="0.8"];
+      node [fontname="Arial", style="rounded,filled", fillcolor="#EAF2F8", color="#1F618D", fontcolor="#17202A", margin="0.12,0.08"];
+      edge [fontname="Arial", color="#34495E", fontcolor="#17202A", arrowsize="0.75"];
+      t [label="ex:task1", shape=box];
+a [label="ex:ana", shape=box];
+l [label="ex:lab1", shape=box];
+as [label="ex:assignedTo", shape=ellipse];
+m [label="ex:memberOf", shape=ellipse];
+r [label="ex:Researcher", shape=ellipse];
+e [label="ex:Employee", shape=ellipse];
+      t -> a [label="ex:assignedTo"];
+as -> r [label="rdfs:range"];
+r -> e [label="rdfs:subClassOf"];
+a -> l [label="ex:memberOf"];
+m -> e [label="rdfs:domain"];
+    }

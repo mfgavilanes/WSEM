@@ -1,0 +1,8 @@
+flowchart LR
+  e["ex:eva"]
+  p["ex:PhDStudent"]
+  s["ex:Student"]
+  pe["ex:Person"]
+  e -->|"rdf:type"| p
+  p -->|"rdfs:subClassOf"| s
+  s -->|"rdfs:subClassOf"| pe
