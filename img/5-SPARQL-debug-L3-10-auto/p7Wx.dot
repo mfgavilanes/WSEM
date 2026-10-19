@@ -1,0 +1,1 @@
+digraph G {rankdir=LR;graph[bgcolor="transparent",pad="0.16"];node[shape=box,style=filled,fillcolor="#EAF3FF",color="#2F6FAB",fontname="Arial"];d[label="datos"];s[label="esquema"];b[label="base completo",fillcolor="#FFF3D7"];i[label="InfModel"];d->b;s->b;b->i;}

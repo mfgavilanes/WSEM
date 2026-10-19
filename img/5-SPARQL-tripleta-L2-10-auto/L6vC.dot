@@ -1,0 +1,1 @@
+digraph G {rankdir=LR;graph[bgcolor="transparent",pad="0.16"];node[shape=box,style=filled,fillcolor="#EAF3FF",color="#2F6FAB",fontname="Arial"];w[label="WebSem\n6 cr, 12 pl",fillcolor="#FFF3D7"];i[label="Introduccion\n3 cr, 20 pl"];d[label="Datos\n6 cr, 0 pl"];}

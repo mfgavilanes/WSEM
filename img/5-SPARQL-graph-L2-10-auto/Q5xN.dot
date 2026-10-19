@@ -1,0 +1,1 @@
+digraph G {rankdir=LR;graph[bgcolor="transparent",pad="0.16"];node[shape=ellipse,style=filled,fillcolor="#EAF3FF",color="#2F6FAB",fontname="Arial"];edge[color="#537FA8",fontname="Arial"];a[label="est:ana"];b[label="est:bruno"];d[label="per:leo"];c[label="asig:SPARQL",fillcolor="#FFF3D7"];a->c[label="matriculadaEn"];b->c[label="matriculadaEn"];d->c[label="imparte"];}

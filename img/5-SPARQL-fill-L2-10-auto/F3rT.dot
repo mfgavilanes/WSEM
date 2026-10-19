@@ -1,0 +1,1 @@
+digraph G {rankdir=LR;graph[bgcolor="transparent",pad="0.16"];node[shape=box,style=filled,fillcolor="#EAF3FF",color="#2F6FAB",fontname="Arial"];c[label="creditos 6"];p[label="plazas 12"];f[label="FILTER",fillcolor="#FFF3D7"];c->f;p->f;}

@@ -1,0 +1,1 @@
+digraph G {rankdir=LR;graph[bgcolor="transparent",pad="0.16"];node[shape=box,style=filled,fillcolor="#EAF3FF",color="#2F6FAB",fontname="Arial"];t[label="texto SPARQL"];q[label="Query"];x[label="QueryExecution"];r[label="ResultSet",fillcolor="#FFF3D7"];t->q[label="QueryFactory"];q->x;x->r[label="execSelect"];}

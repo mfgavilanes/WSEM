@@ -1,0 +1,1 @@
+digraph G {rankdir=LR;graph[bgcolor="transparent",pad="0.16"];node[shape=box,style=filled,fillcolor="#EAF3FF",color="#2F6FAB",fontname="Arial"];g[label="grupo curso"];n[label="COUNT DISTINCT",fillcolor="#FFF3D7"];h[label="HAVING n >= 2"];g->n->h;}

@@ -1,0 +1,1 @@
+digraph G {rankdir=LR;graph[bgcolor="transparent",pad="0.16"];node[shape=box,style=filled,fillcolor="#EAF3FF",color="#2F6FAB",fontname="Arial"];s[label="SPARQL 3"];r[label="Redes 2",fillcolor="#FFF3D7"];b[label="Basica 1"];o[label="DESC + OFFSET 1 + LIMIT 1"];s->o;r->o;b->o;}

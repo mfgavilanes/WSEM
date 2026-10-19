@@ -1,0 +1,1 @@
+digraph G {rankdir=LR;graph[bgcolor="transparent",pad="0.16"];node[shape=box,style=filled,fillcolor="#EAF3FF",color="#2F6FAB",fontname="Arial"];a[label="Ana"];l1[label="etiqueta 1"];l2[label="etiqueta 2"];d1[label="docente 1"];d2[label="docente 2"];a->l1;a->l2;a->d1;a->d2;}

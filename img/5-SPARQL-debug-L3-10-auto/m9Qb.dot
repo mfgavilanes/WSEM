@@ -1,0 +1,1 @@
+digraph G {rankdir=LR;graph[bgcolor="transparent",pad="0.16"];node[shape=ellipse,style=filled,fillcolor="#EAF3FF",color="#2F6FAB",fontname="Arial"];edge[color="#537FA8",fontname="Arial"];p[label="persona"];e[label="email no enlazado",shape=box,fillcolor="#FFF3D7"];c[label="contacto",shape=box];p->e[style=dashed];p->c[style=dashed,label="no se construye"];}

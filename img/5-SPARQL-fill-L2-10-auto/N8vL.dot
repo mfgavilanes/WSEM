@@ -1,0 +1,1 @@
+digraph G {rankdir=LR;graph[bgcolor="transparent",pad="0.16"];node[shape=ellipse,style=filled,fillcolor="#EAF3FF",color="#2F6FAB",fontname="Arial"];edge[color="#537FA8",fontname="Arial"];c[label="curso"];l[label="Semantic Web",shape=box,fillcolor="#FFF3D7"];c->l[label="label"];}

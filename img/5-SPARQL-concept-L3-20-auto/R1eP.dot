@@ -1,0 +1,1 @@
+digraph G {rankdir=LR;graph[bgcolor="transparent",pad="0.16"];node[shape=box,style=filled,fillcolor="#EAF3FF",color="#2F6FAB",fontname="Arial"];g[label="GROUP BY"];h[label="HAVING",fillcolor="#FFF3D7"];o[label="ORDER BY"];g->h->o;}

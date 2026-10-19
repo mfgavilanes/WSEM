@@ -1,0 +1,1 @@
+digraph G {rankdir=LR;graph[bgcolor="transparent",pad="0.16"];node[shape=box,style=filled,fillcolor="#EAF3FF",color="#2F6FAB",fontname="Arial"];x[label="execConstruct"];m[label="Model",fillcolor="#FFF3D7"];w[label="RDFDataMgr.write"];x->m->w;}

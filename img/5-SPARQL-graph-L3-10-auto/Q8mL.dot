@@ -1,0 +1,1 @@
+digraph G {rankdir=LR;graph[bgcolor="transparent",pad="0.16"];node[shape=ellipse,style=filled,fillcolor="#EAF3FF",color="#2F6FAB",fontname="Arial"];edge[color="#537FA8",fontname="Arial"];a[label="Ana"];b[label="Bruno",fillcolor="#FFF3D7"];c[label="Carla"];e1[label="ana@uni.es",shape=box];e2[label="carla@ext.es",shape=box];a->e1[label="email"];c->e2[label="email"];}
