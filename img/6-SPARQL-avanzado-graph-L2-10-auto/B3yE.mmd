@@ -1,0 +1,4 @@
+flowchart LR
+  s01["student:s01"] -->|"rdf:type"| cls(("ex:Student"))
+  s02["student:s02"] -->|"rdf:type"| cls
+  p01["project:p01"] -->|"ex:hasMember"| s01

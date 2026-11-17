@@ -1,0 +1,8 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="transparent", fontname="Arial", label="Dirección explícita de la propiedad", labelloc=t, fontsize=18];
+  node [shape=box, style="rounded,filled", fillcolor="#E8F1FA", color="#2F6B8A", fontname="Arial"];
+  edge [color="#346B8A", fontname="Arial", fontsize=12];
+  teacher [label="teacher:t01"];
+  student [label="student:s01"];
+  teacher -> student [label="ex:supervises"];
+}

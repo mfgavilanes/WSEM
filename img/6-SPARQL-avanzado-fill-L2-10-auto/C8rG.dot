@@ -1,0 +1,3 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="transparent", fontname="Arial", label="Datos académicos y esquema", labelloc=t, fontsize=18]; node [shape=box, style="rounded,filled", fillcolor="#E8F1FA", color="#2F6B8A", fontname="Arial"]; edge [color="#346B8A", fontname="Arial", fontsize=11]; subgraph cluster_a { label="urn:graph:academic"; color="#3C8DAD"; style="rounded"; t03 [label="teacher:t03"]; c01 [label="course:c01"]; t03 -> c01 [label="ex:teaches"]; } subgraph cluster_s { label="schema RDFS"; color="#7A8D3C"; style="rounded"; teaches [label="ex:teaches", shape=ellipse, fillcolor="#F6E8C3"]; teacher [label="ex:Teacher", shape=ellipse, fillcolor="#F6E8C3"]; teaches -> teacher [label="rdfs:domain"]; }
+}

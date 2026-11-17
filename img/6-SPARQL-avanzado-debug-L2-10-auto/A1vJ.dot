@@ -1,0 +1,3 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="transparent", fontname="Arial", label="Relación que debe compartir la variable", labelloc=t, fontsize=18]; node [shape=box, style="rounded,filled", fillcolor="#E8F1FA", color="#2F6B8A", fontname="Arial"]; edge [color="#346B8A", fontname="Arial", fontsize=11]; subgraph cluster_a { label="urn:graph:academic"; color="#3C8DAD"; style="rounded"; s01 [label="student:s01"]; s02 [label="student:s02"]; cls [label="ex:Student", shape=ellipse, fillcolor="#F6E8C3"]; s01 -> cls [label="rdf:type"]; s02 -> cls [label="rdf:type"]; } subgraph cluster_r { label="urn:graph:research"; color="#7A8D3C"; style="rounded"; p01 [label="project:p01"]; p01 -> s01 [label="ex:hasMember"]; }
+}

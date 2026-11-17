@@ -1,0 +1,3 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="transparent", fontname="Arial", label="Matrícula en el grafo académico", labelloc=t, fontsize=18]; node [shape=box, style="rounded,filled", fillcolor="#E8F1FA", color="#2F6B8A", fontname="Arial"]; edge [color="#346B8A", fontname="Arial", fontsize=11]; subgraph cluster_a { label="urn:graph:academic"; color="#3C8DAD"; style="rounded"; s01 [label="student:s01"]; c02 [label="course:c02"]; s01 -> c02 [label="ex:enrolledIn"]; }
+}

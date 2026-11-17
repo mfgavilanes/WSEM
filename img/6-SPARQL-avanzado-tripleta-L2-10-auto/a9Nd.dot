@@ -1,0 +1,1 @@
+digraph G { graph [rankdir=LR, bgcolor="transparent"]; node [shape=box, style="rounded,filled", fillcolor="#E8F1FA"]; t03 [label="teacher:t03"]; c01 [label="course:c01"]; teaches [label="ex:teaches", shape=ellipse]; linked [label="ex:isLinkedTo", shape=ellipse]; t03 -> c01 [label="ex:teaches"]; teaches -> linked [label="rdfs:subPropertyOf"]; }

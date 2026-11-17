@@ -1,0 +1,1 @@
+digraph G { graph [rankdir=LR, bgcolor="transparent", label="Supervisión", labelloc=t]; node [shape=box, style="rounded,filled", fillcolor="#E8F1FA"]; t01 [label="teacher:t01"]; s01 [label="student:s01"]; t01 -> s01 [label="ex:supervises"]; }

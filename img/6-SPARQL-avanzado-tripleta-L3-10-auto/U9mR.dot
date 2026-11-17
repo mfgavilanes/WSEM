@@ -1,0 +1,1 @@
+digraph G { graph [rankdir=LR, bgcolor="transparent"]; node [shape=box, style="rounded,filled", fillcolor="#E8F1FA"]; s [label="student:s01"]; c3 [label="course:c03"]; c2 [label="course:c02"]; c1 [label="course:c01"]; s -> c3 [label="ex:enrolledIn"]; c3 -> c2 [label="ex:hasPrerequisite"]; c2 -> c1 [label="ex:hasPrerequisite"]; s -> c2 [label="ex:passed"]; }

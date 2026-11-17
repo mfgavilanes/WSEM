@@ -1,0 +1,4 @@
+flowchart LR
+  t03["teacher:t03"] -->|"ex:teaches"| c01["course:c01"]
+  teaches(("ex:teaches")) -->|"rdfs:domain"| teacher(("ex:Teacher"))
+  teacher -->|"rdfs:subClassOf"| member(("ex:UniversityMember"))

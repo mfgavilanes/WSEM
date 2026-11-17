@@ -1,0 +1,7 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="transparent", fontname="Arial", label="Datos y esquema RDFS", labelloc=t, fontsize=18];
+ node [shape=box, style="rounded,filled", fillcolor="#E8F1FA", color="#2F6B8A", fontname="Arial"];
+ edge [color="#346B8A", fontname="Arial", fontsize=11];
+ t03 [label="teacher:t03"]; c01 [label="course:c01"]; teaches [label="ex:teaches", shape=ellipse, fillcolor="#F6E8C3"]; teacher [label="ex:Teacher", shape=ellipse, fillcolor="#F6E8C3"]; member [label="ex:UniversityMember", shape=ellipse, fillcolor="#F6E8C3"];
+ t03 -> c01 [label="ex:teaches"]; teaches -> teacher [label="rdfs:domain"]; teacher -> member [label="rdfs:subClassOf"];
+}

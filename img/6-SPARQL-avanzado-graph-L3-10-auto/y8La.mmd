@@ -1,0 +1,5 @@
+flowchart LR
+  s01["student:s01"] -->|"ex:enrolledIn"| c03["course:c03"]
+  c03 -->|"ex:hasPrerequisite"| c02["course:c02"]
+  c02 -->|"ex:hasPrerequisite"| c01["course:c01"]
+  s01 -->|"ex:passed"| c02

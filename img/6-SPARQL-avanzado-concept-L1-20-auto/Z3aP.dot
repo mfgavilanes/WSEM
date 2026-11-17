@@ -1,0 +1,10 @@
+digraph G {
+  graph [rankdir=LR, bgcolor="transparent", fontname="Arial", label="Cadena de prerrequisitos", labelloc=t, fontsize=18];
+  node [shape=box, style="rounded,filled", fillcolor="#E8F1FA", color="#2F6B8A", fontname="Arial"];
+  edge [color="#346B8A", fontname="Arial", fontsize=11];
+  c03 [label="course:c03\nWeb semántica"];
+  c02 [label="course:c02\nEstructuras de datos"];
+  c01 [label="course:c01\nFundamentos"];
+  c03 -> c02 [label="ex:hasPrerequisite"];
+  c02 -> c01 [label="ex:hasPrerequisite"];
+}

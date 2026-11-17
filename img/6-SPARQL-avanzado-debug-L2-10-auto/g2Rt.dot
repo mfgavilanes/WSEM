@@ -1,0 +1,2 @@
+digraph G {
+ graph [rankdir=LR, bgcolor="transparent", fontname="Arial", label="Dirección explícita de la supervisión", labelloc=t, fontsize=18]; node [shape=box, style="rounded,filled", fillcolor="#E8F1FA", color="#2F6B8A", fontname="Arial"]; edge [color="#346B8A", fontname="Arial", fontsize=12]; t01 [label="teacher:t01"]; s01 [label="student:s01"]; t01 -> s01 [label="ex:supervises"]; }
